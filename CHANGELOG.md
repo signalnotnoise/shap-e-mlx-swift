@@ -22,3 +22,5 @@
   `scripts/fetch_weights.py` for the pinned Hugging Face snapshot.
 - `--text-only` verification fails when a checksummed file inside the
   text scope is missing. Missing files outside that scope are skipped.
+- Added `AGENTS.md`, `docs/engineering_standards.md`, the knowledge graph,
+  and `docs/wiki/` pages. `scripts/verify_docs.py` checks their line anchors.

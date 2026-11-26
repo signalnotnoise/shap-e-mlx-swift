@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import io
+import json
 import sys
 import tempfile
 import unittest
@@ -26,6 +27,21 @@ def _digest(payload: bytes) -> str:
 
 def _line(payload: bytes, name: str) -> str:
     return f"{_digest(payload)}  {name}"
+
+
+def _manifest(*tensor_paths: str) -> bytes:
+    families: dict[str, dict] = {}
+    for tensor_path in tensor_paths:
+        family = tensor_path.split("/", 1)[0]
+        families.setdefault(family, {"version": 1, "metadata": {}, "tensors": {}})
+        name = tensor_path.replace("/", "_")
+        families[family]["tensors"][name] = {
+            "name": name,
+            "path": tensor_path,
+            "shape": [1],
+            "dtype": "float32",
+        }
+    return json.dumps({"artifact_version": 1, "families": families}).encode()
 
 
 class TextOnlyVerificationTests(unittest.TestCase):
@@ -58,7 +74,7 @@ class TextOnlyVerificationTests(unittest.TestCase):
     def test_text_only_skips_missing_files_outside_the_text_scope(self) -> None:
         files = {
             "README.md": b"readme",
-            "manifest.json": b"manifest",
+            "manifest.json": _manifest("clip_text/token_embedding.bin"),
             "bpe_simple_vocab_16e6.txt.gz": b"bpe",
             "provenance.json": b"provenance",
             "LICENSE": b"license",
@@ -86,6 +102,31 @@ class TextOnlyVerificationTests(unittest.TestCase):
         self.assertEqual(text_only, 0, stderr.getvalue())
         self.assertIn("Verified 7 checksummed files", stdout.getvalue())
         self.assertNotEqual(full, 0)
+
+    def test_truncated_checksum_list_fails_against_manifest(self) -> None:
+        readme = b"readme"
+        tensor = b"tensor-bytes"
+        manifest = _manifest("clip_text/token_embedding.bin")
+        checksum = _line(readme, "README.md") + "\n"
+        with tempfile.TemporaryDirectory() as temporary:
+            bundle = Path(temporary)
+            (bundle / "README.md").write_bytes(readme)
+            (bundle / "manifest.json").write_bytes(manifest)
+            tensor_path = bundle / "clip_text" / "token_embedding.bin"
+            tensor_path.parent.mkdir(parents=True)
+            tensor_path.write_bytes(tensor)
+            (bundle / "checksums.sha256").write_text(checksum, encoding="utf-8")
+            for flag in ([], ["--text-only"]):
+                stdout = io.StringIO()
+                stderr = io.StringIO()
+                with redirect_stdout(stdout), redirect_stderr(stderr):
+                    code = fetch_weights.main(
+                        ["--verify-only", *flag, "--output", str(bundle)]
+                    )
+                self.assertNotEqual(code, 0, flag)
+                self.assertIn("incomplete versus manifest.json", stderr.getvalue())
+                self.assertIn("clip_text/token_embedding.bin", stderr.getvalue())
+                self.assertNotIn("Verified", stdout.getvalue())
 
 
 if __name__ == "__main__":

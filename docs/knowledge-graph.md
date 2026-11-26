@@ -2,7 +2,7 @@
 
 Verified source commit: `9d042666fbfbd40b07417cd23dfe34d0731d673f` on `cursor/shap-e-runtime-package-ea5b`.
 
-That SHA is the tree these Swift and script line numbers were measured against. The documentation commit does not modify those files. It does add a CI step, so `.github/workflows/ci.yml` citations match the workflow after that edit. `scripts/verify_docs.py` checks the checkout, not that `HEAD` equals this SHA.
+That SHA is the commit recorded when the graph was measured. `scripts/verify_docs.py` does not ask git whether this commit is an ancestor of `HEAD`. It checks the cited lines in the working tree.
 
 Machine-readable index: [knowledge-graph.json](knowledge-graph.json).
 
@@ -40,7 +40,7 @@ flowchart TD
 | Marching cubes, CPU and Metal | `Sources/ShapERuntime/MarchingCubes.swift:24-125`, `Sources/ShapERuntime/MetalMarchingCubes.swift:40-72`, `Sources/ShapERuntime/MCTable.swift:2` |
 | Mesh export | `Sources/ShapERuntime/MeshExport.swift:19-70`, `Sources/ShapERuntime/MeshTopology.swift:22-112` |
 | CLI and A/B mesh | `Sources/ShapECLI/main.swift:418-593`, `Sources/ShapECLI/main.swift:212-234` |
-| Weights fetch and verify | `scripts/fetch_weights.py:26-57`, `scripts/fetch_weights.py:98-131` |
+| Weights fetch and verify | `scripts/fetch_weights.py:32-59`, `scripts/fetch_weights.py:157-193` |
 | Tests | `Tests/ShapERuntimeTests/RuntimeBundleFixture.swift:3-25`, `run_tests.sh:17-20` |
 | CI and manifest | `Package.swift:1-22`, `.github/workflows/ci.yml:36-48`, `Package.resolved:4-11` |
 

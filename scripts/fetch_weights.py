@@ -11,8 +11,10 @@ spaces, then a relative path. checksums.sha256 itself is not an entry.
 
 `--text-only` still requires every checksum entry in the text scope
 (root files, `licenses/*`, and the five text-family `*.bin` files).
-Missing entries outside that scope are skipped. The Swift unit tests
-use the checked-in stub and do not download this bundle.
+Missing entries outside that scope are skipped. A checksum list that
+omits a tensor path declared by manifest.json fails even when every
+listed file matches. The Swift unit tests use the checked-in stub and
+do not download this bundle.
 """
 
 from __future__ import annotations
@@ -95,6 +97,63 @@ def ensure_text_only_output_is_clean(output: Path) -> None:
         )
 
 
+def manifest_tensor_paths(manifest_path: Path) -> list[str]:
+    """Return tensor blob paths declared by a format-v1 runtime manifest."""
+
+    import json
+
+    try:
+        payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"manifest.json is not valid JSON: {exc}") from exc
+    if not isinstance(payload, dict):
+        raise ValueError("manifest.json must be a JSON object")
+    families = payload.get("families")
+    if not isinstance(families, dict):
+        raise ValueError("manifest.json is missing an object field 'families'")
+
+    paths: list[str] = []
+    for family_name, family in families.items():
+        if not isinstance(family, dict):
+            raise ValueError(f"manifest family {family_name!r} is not an object")
+        tensors = family.get("tensors", {})
+        if not isinstance(tensors, dict):
+            raise ValueError(f"manifest family {family_name!r} tensors is not an object")
+        for tensor_name, entry in tensors.items():
+            path = entry.get("path") if isinstance(entry, dict) else None
+            if not isinstance(path, str) or not path:
+                raise ValueError(
+                    f"manifest tensor {family_name}/{tensor_name} is missing a path"
+                )
+            paths.append(path.replace("\\", "/").lstrip("./"))
+    return paths
+
+
+def ensure_checksum_list_covers_manifest(bundle: Path, checksum_names: set[str]) -> None:
+    """Fail when checksums.sha256 omits a tensor path the manifest declares.
+
+    A truncated list can still match every file it bothers to name. The
+    manifest is the list of blobs the runtime will open, so each of those
+    paths has to appear in the checksum list. This applies to text-only
+    verification as well: image paths may be absent from disk, but they
+    still have to be named when the manifest includes them.
+    """
+
+    manifest_path = bundle / "manifest.json"
+    if not manifest_path.is_file():
+        return
+    missing = [
+        path for path in manifest_tensor_paths(manifest_path) if path not in checksum_names
+    ]
+    if not missing:
+        return
+    preview = ", ".join(missing[:8])
+    raise ValueError(
+        "checksums.sha256 is incomplete versus manifest.json: "
+        f"missing {len(missing)} tensor path(s): {preview}"
+    )
+
+
 def verify_checksums(bundle: Path, *, text_only: bool = False) -> int:
     """Hash files listed in `checksums.sha256`.
 
@@ -108,9 +167,11 @@ def verify_checksums(bundle: Path, *, text_only: bool = False) -> int:
         raise FileNotFoundError(f"Bundle checksum file not found: {checksum_path}")
 
     verified = 0
+    checksum_names: set[str] = set()
     for expected, relative_name in parse_checksum_lines(
         checksum_path.read_text(encoding="utf-8").splitlines()
     ):
+        checksum_names.add(relative_name.replace("\\", "/").lstrip("./"))
         path = bundle / relative_name
         if not path.is_file():
             if text_only and not is_text_scope_path(relative_name):
@@ -128,6 +189,7 @@ def verify_checksums(bundle: Path, *, text_only: bool = False) -> int:
         verified += 1
     if verified == 0:
         raise ValueError("No downloaded files matched checksums.sha256")
+    ensure_checksum_list_covers_manifest(bundle, checksum_names)
     return verified
 
 

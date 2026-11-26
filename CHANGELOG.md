@@ -24,5 +24,8 @@
   `scripts/fetch_weights.py` for the pinned Hugging Face snapshot.
 - `--text-only` verification fails when a checksummed file inside the
   text scope is missing. Missing files outside that scope are skipped.
+  A checksum list that omits a manifest tensor path also fails.
 - Added `AGENTS.md`, `docs/engineering_standards.md`, the knowledge graph,
-  and `docs/wiki/` pages. `scripts/verify_docs.py` checks their line anchors.
+  and `docs/wiki/` pages. `scripts/verify_docs.py` checks their line anchors
+  against the working tree and does not require `verified_commit` to be an
+  ancestor of `HEAD`.

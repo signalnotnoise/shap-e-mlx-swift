@@ -92,7 +92,7 @@ The macOS job does not download weights. Unit tests use `Tests/ShapERuntimeTests
 
 ## Attribution
 
-This package is MIT licensed. Copyright (c) 2026 Ismael Alex Otero (signalnotnoise). See [LICENSE](LICENSE).
+This package is MIT licensed. Copyright (c) 2026 Ismael Alex Otero. [signalnotnoise](https://github.com/signalnotnoise) maintains the project. See [LICENSE](LICENSE).
 
 The Swift sources are a port of [Shap-E](https://github.com/openai/shap-e) (MIT, Copyright (c) 2023 OpenAI) and depend on the CLIP BPE vocabulary from [CLIP](https://github.com/openai/CLIP) (MIT, Copyright (c) 2021 OpenAI). Those license texts are [licenses/Shap-E.txt](licenses/Shap-E.txt) and [licenses/CLIP.txt](licenses/CLIP.txt). MLX and mlx-swift are MIT licensed dependencies from Apple and are not vendored. Full notices are in [NOTICE](NOTICE).
 

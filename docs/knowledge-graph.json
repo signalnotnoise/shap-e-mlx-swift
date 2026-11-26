@@ -3,7 +3,7 @@
     "repo": "signalnotnoise/shap-e-mlx-swift",
     "branch": "cursor/shap-e-runtime-package-ea5b",
     "verified_commit": "9d042666fbfbd40b07417cd23dfe34d0731d673f",
-    "verified_commit_note": "Line numbers for Swift sources, scripts/fetch_weights.py, scripts/test_fetch_weights.py, Package.swift, Package.resolved, README.md, and run_tests.sh were measured on this commit. The documentation commit does not modify those files. It does add a step to .github/workflows/ci.yml, so citations of that workflow match the workflow in the documentation commit. scripts/verify_docs.py checks the checkout, not that HEAD equals verified_commit.",
+    "verified_commit_note": "The checker does not use git history. It does not require verified_commit to equal HEAD or to be an ancestor of HEAD. Every cited line is checked against the working tree, including a source token named after the citation when the sentence has one.",
     "generated_at": "2026-11-26T16:00:00Z",
     "swift_tools_version": "6.2",
     "mlx_swift_constraint": "\"0.31.3\"..<\"0.31.5\"; Package.resolved pins 0.31.3 (revision 61b9e011e09a62b489f6bd647958f1555bdf2896). Capped below 0.31.5 because 0.31.5+ requires swift-tools-version 6.3."
@@ -140,20 +140,20 @@
     "weights_fetch_verify": [
       {
         "file_path": "scripts/fetch_weights.py",
-        "line_start": 26,
-        "line_end": 57,
+        "line_start": 32,
+        "line_end": 59,
         "symbol": "TEXT_FAMILIES"
       },
       {
         "file_path": "scripts/fetch_weights.py",
-        "line_start": 98,
-        "line_end": 131,
+        "line_start": 157,
+        "line_end": 193,
         "symbol": "verify_checksums"
       },
       {
         "file_path": "scripts/test_fetch_weights.py",
-        "line_start": 1,
-        "line_end": 40,
+        "line_start": 48,
+        "line_end": 72,
         "symbol": "text_only"
       }
     ],

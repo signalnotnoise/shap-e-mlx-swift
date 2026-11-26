@@ -41,6 +41,7 @@ jobs:
 
       - name: Build and test
         run: |
+          set -o pipefail
           xcodebuild test \
             -scheme ShapERuntime-Package \
             -destination 'platform=macOS' \

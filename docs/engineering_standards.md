@@ -8,7 +8,7 @@ Invariants for this package. Generic Swift style is not restated here.
 
 The dependency is `https://github.com/ml-explore/mlx-swift` `"0.31.3"..<"0.31.5"` (`Package.swift:22`), the same range as triposr-mlx-swift. mlx-swift 0.31.5 and later require swift-tools-version 6.3, and this manifest is 6.2, so do not raise the cap without moving the tools version. The floor is 0.31.3, the version `Package.resolved` pins and CI tests.
 
-`Package.resolved:4-11` pins mlx-swift `0.31.3` at revision `61b9e011e09a62b489f6bd647958f1555bdf2896`. `README.md:98` says the recorded M3 Max CLI run used that pin. Do not present a tighter range unless `Package.swift` gains one.
+`Package.resolved:4-11` pins mlx-swift `0.31.3` at revision `61b9e011e09a62b489f6bd647958f1555bdf2896`. `README.md:98` says the recorded M3 Max CLI run used that pin. Do not change the `Package.swift` range without updating that lockfile pin.
 
 ## Tensor layout
 
@@ -28,14 +28,15 @@ Shapes below are the ones named in source comments and checks.
 
 No trained weights are committed. `.gitignore` ignores `runtime_bundle/`. The checked-in tensors are the random stub under `Tests/ShapERuntimeTests/Fixtures/runtime_bundle_stub/`.
 
-The download pin in `scripts/fetch_weights.py:23-24` is repo `signalNotNoise/shap-e-mlx`, revision `d71f70a09b9c03535188d006a719edda5c19a6eb`. `README.md:96` says Hub tag `v0.1.0` resolves to that commit and that one local run verified 1,102 checksummed files. This file does not restate a byte size beyond the fixture README's "5.143 GB" label (`Fixtures/README.md:30`).
+The download pin in `scripts/fetch_weights.py:29-30` is repo `signalNotNoise/shap-e-mlx`, revision `d71f70a09b9c03535188d006a719edda5c19a6eb`. `README.md:96` says Hub tag `v0.1.0` resolves to that commit and that one local run verified 1,102 checksummed files. This file does not restate a byte size beyond the fixture README's "5.143 GB" label (`Fixtures/README.md:30`).
 
-Checksum lines are 64 hex characters, two spaces, then a relative path (`fetch_weights.py:60-72`). `verify_checksums` (`fetch_weights.py:98-131`):
+Checksum lines are 64 hex characters, two spaces, then a relative path (`fetch_weights.py:62-74`). `verify_checksums` (`fetch_weights.py:157-193`):
 
 - Full verification fails if any listed file is missing or the digest mismatches.
-- `--text-only` skips a missing file only when `is_text_scope_path` is false (`fetch_weights.py:116-118`).
-- Text scope is `ROOT_FILES`, `licenses/*`, and `*.bin` under `clip_text`, `text300m`, `diffusion`, `decoder_params`, and `renderer` (`fetch_weights.py:26-57`).
-- A directory whose only matching payload is `README.md` must exit nonzero. `scripts/test_fetch_weights.py:32` covers that case.
+- `--text-only` skips a missing file only when `is_text_scope_path` is false (`fetch_weights.py:177`).
+- Text scope is `ROOT_FILES`, `licenses/*`, and `*.bin` under `clip_text`, `text300m`, `diffusion`, `decoder_params`, and `renderer` (`fetch_weights.py:32-59`).
+- Every tensor `path` in `manifest.json` must be named in `checksums.sha256`, including paths outside the text scope. A truncated checksum list fails even when every listed file matches (`fetch_weights.py:132-154`).
+- A directory whose only matching payload is `README.md` must exit nonzero. `test_text_only_fails_when_only_readme_is_present` (`scripts/test_fetch_weights.py:48`) covers that case. `test_truncated_checksum_list_fails_against_manifest` (`scripts/test_fetch_weights.py:106`) covers a checksum list that omits a manifest tensor path.
 
 `RuntimeArtifactBundle` requires `manifest.json` and loads each family listed there (`RuntimeArtifactBundle.swift:45-113`). Blob bytes are raw tensors, not safetensors. Canonical names are the manifest tensor names plus the on-disk file each entry points at. This package does not duplicate a per-tensor byte size table.
 

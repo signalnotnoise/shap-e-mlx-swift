@@ -2,7 +2,7 @@
 
 ## What is pinned
 
-`scripts/fetch_weights.py:23-24` pins `signalNotNoise/shap-e-mlx` at revision `d71f70a09b9c03535188d006a719edda5c19a6eb`.
+`scripts/fetch_weights.py:29-30` pins `signalNotNoise/shap-e-mlx` at revision `d71f70a09b9c03535188d006a719edda5c19a6eb`.
 
 `README.md:96` says tag `v0.1.0` resolves to that commit and that one download verified 1,102 checksummed files. The stub fixture README calls the real Hub bundle 1,088 tensors and 5.143 GB (`Tests/ShapERuntimeTests/Fixtures/README.md:30`). This package does not re-measure that payload in CI.
 
@@ -16,17 +16,17 @@ Trained weights are not in git. `runtime_bundle/` is gitignored. The only commit
 
 ## fetch_weights.py
 
-Checksum lines: 64 hex digits, two spaces, relative path (`fetch_weights.py:60-72`).
+Checksum lines: 64 hex digits, two spaces, relative path (`fetch_weights.py:62-74`).
 
-`verify_checksums` (`fetch_weights.py:98-131`) hashes every present listed file. A digest mismatch fails. A missing file fails, except under `--text-only` when `is_text_scope_path` is false (`fetch_weights.py:116-118`).
+`verify_checksums` (`fetch_weights.py:157-193`) hashes every present listed file. A digest mismatch fails. A missing file fails, except under `--text-only` when `is_text_scope_path` is false (`fetch_weights.py:177`). After the hashes, `ensure_checksum_list_covers_manifest` (`fetch_weights.py:132-154`) fails if `manifest.json` names a tensor `path` that `checksums.sha256` does not list. That catches a truncated checksum list even when every listed file is present and matches.
 
-Text scope (`fetch_weights.py:26-57`):
+Text scope (`fetch_weights.py:32-59`):
 
 - Root files: `manifest.json`, `bpe_simple_vocab_16e6.txt.gz`, `checksums.sha256`, `provenance.json`, `LICENSE`, `README.md`.
 - `licenses/*`.
 - `*.bin` in `clip_text`, `text300m`, `diffusion`, `decoder_params`, `renderer`.
 
-`clip_vision` and `image300m` are outside that scope (`fetch_weights.py:33-36`). A text-only tree that lacks them can still verify. A tree that only has a matching `README.md`, and is missing the manifest, the BPE file, or a text-family tensor, must exit nonzero. The test is `scripts/test_fetch_weights.py:32`.
+`clip_vision` and `image300m` are outside that scope (`fetch_weights.py:39-42`). A text-only tree that lacks them can still verify. A tree that only has a matching `README.md`, and is missing the manifest, the BPE file, or a text-family tensor, must exit nonzero. `test_text_only_fails_when_only_readme_is_present` (`scripts/test_fetch_weights.py:48`) covers that case. `test_truncated_checksum_list_fails_against_manifest` (`scripts/test_fetch_weights.py:106`) covers a checksum list that omits a manifest tensor path while the blob itself is on disk.
 
 ## BPE fallback
 

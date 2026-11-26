@@ -26,6 +26,9 @@ jobs:
       - name: Test weight verification
         run: python3 -m unittest scripts/test_fetch_weights.py
 
+      - name: Verify documentation anchors
+        run: python3 scripts/verify_docs.py
+
       - name: Show toolchain
         run: |
           xcodebuild -version

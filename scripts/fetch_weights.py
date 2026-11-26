@@ -9,12 +9,16 @@ root, not a tensor family) as bpeVocabularyURL.
 Checksum lines match the bundle's checksums.sha256: 64 hex characters, two
 spaces, then a relative path. checksums.sha256 itself is not an entry.
 
-This script does not run in CI. The unit tests use the checked-in stub.
+`--text-only` still requires every checksum entry in the text scope
+(root files, `licenses/*`, and the five text-family `*.bin` files).
+Missing entries outside that scope are skipped. The Swift unit tests
+use the checked-in stub and do not download this bundle.
 """
 
 from __future__ import annotations
 
 import argparse
+import fnmatch
 import hashlib
 import sys
 from pathlib import Path
@@ -68,6 +72,15 @@ def parse_checksum_lines(lines: list[str]) -> list[tuple[str, str]]:
     return entries
 
 
+def is_text_scope_path(relative_name: str) -> bool:
+    """True when a checksum path is part of a `--text-only` download."""
+
+    normalized = relative_name.replace("\\", "/").lstrip("./")
+    patterns = patterns_for_scope(text_only=True)
+    assert patterns is not None
+    return any(fnmatch.fnmatch(normalized, pattern) for pattern in patterns)
+
+
 def ensure_text_only_output_is_clean(output: Path) -> None:
     present = [
         family
@@ -82,7 +95,14 @@ def ensure_text_only_output_is_clean(output: Path) -> None:
         )
 
 
-def verify_checksums(bundle: Path, *, require_all: bool) -> int:
+def verify_checksums(bundle: Path, *, text_only: bool = False) -> int:
+    """Hash files listed in `checksums.sha256`.
+
+    Full verification requires every listed file. Text-only verification
+    skips a missing file only when that path is outside the text scope.
+    A missing manifest, tokenizer, license, or text-family tensor fails.
+    """
+
     checksum_path = bundle / "checksums.sha256"
     if not checksum_path.is_file():
         raise FileNotFoundError(f"Bundle checksum file not found: {checksum_path}")
@@ -93,9 +113,9 @@ def verify_checksums(bundle: Path, *, require_all: bool) -> int:
     ):
         path = bundle / relative_name
         if not path.is_file():
-            if require_all:
-                raise FileNotFoundError(f"Checksummed bundle file is missing: {path}")
-            continue
+            if text_only and not is_text_scope_path(relative_name):
+                continue
+            raise FileNotFoundError(f"Checksummed bundle file is missing: {path}")
         digest = hashlib.sha256()
         with path.open("rb") as handle:
             for chunk in iter(lambda: handle.read(1024 * 1024), b""):
@@ -138,7 +158,7 @@ def download_bundle(
             allow_patterns=patterns_for_scope(text_only=text_only),
         )
     )
-    count = verify_checksums(downloaded, require_all=not text_only)
+    count = verify_checksums(downloaded, text_only=text_only)
     return downloaded, count
 
 
@@ -170,7 +190,7 @@ def main(argv: list[str] | None = None) -> int:
     output = Path(args.output).expanduser().resolve()
     try:
         if args.verify_only:
-            count = verify_checksums(output, require_all=not args.text_only)
+            count = verify_checksums(output, text_only=args.text_only)
         else:
             print(f"Downloading {args.repo_id}@{args.revision}")
             print(f"Scope: {'text-only families' if args.text_only else 'full bundle'}")

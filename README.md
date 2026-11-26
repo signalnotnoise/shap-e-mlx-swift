@@ -75,7 +75,7 @@ The directory is gitignored. To check a directory you already have, without cont
 python3 scripts/fetch_weights.py --verify-only --output runtime_bundle
 ```
 
-`--text-only` downloads `clip_text`, `text300m`, `diffusion`, `decoder_params`, `renderer`, and the root files (`manifest.json`, the BPE vocabulary, checksums, provenance, licenses, README). That set is what `generate(prompt:)` loads. `generate(image:)` also needs `clip_vision` and `image300m`, which `--text-only` omits. Text-only verification skips checksum entries for files that were not downloaded. Files that are present still have to match.
+`--text-only` downloads `clip_text`, `text300m`, `diffusion`, `decoder_params`, `renderer`, `licenses/*`, and the root files (`manifest.json`, the BPE vocabulary, checksums, provenance, LICENSE, README). That set is what `generate(prompt:)` loads. `generate(image:)` also needs `clip_vision` and `image300m`, which `--text-only` omits. Text-only verification still requires every checksum entry in that scope. A missing manifest, tokenizer, license, or text-family tensor fails. Entries outside that scope, including the image families, are skipped only when the file is absent. Files that are present still have to match.
 
 ## Platforms and what is tested
 

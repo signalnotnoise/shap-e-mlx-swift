@@ -23,6 +23,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Test weight verification
+        run: python3 -m unittest scripts/test_fetch_weights.py
+
       - name: Show toolchain
         run: |
           xcodebuild -version

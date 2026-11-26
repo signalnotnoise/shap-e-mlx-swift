@@ -20,3 +20,5 @@
   is omitted. An explicit `--bpe` path is used when that file exists.
 - Added a macOS GitHub Actions workflow, `.spi.yml`, and
   `scripts/fetch_weights.py` for the pinned Hugging Face snapshot.
+- `--text-only` verification fails when a checksummed file inside the
+  text scope is missing. Missing files outside that scope are skipped.

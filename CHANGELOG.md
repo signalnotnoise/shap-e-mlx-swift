@@ -11,8 +11,10 @@
   history of the directory is one snapshot commit, so this repository
   starts from a clean copy. See NOTICE.
 - Package manifest is at the repository root. Platforms remain macOS 14,
-  iOS 17, and visionOS 1. The mlx-swift dependency remains
-  `from: "0.29.1"`, with `Package.resolved` still pinning 0.31.3.
+  iOS 17, and visionOS 1. The mlx-swift dependency is
+  `"0.31.3"..<"0.31.5"`, matching triposr-mlx-swift. mlx-swift 0.31.5 and
+  later require swift-tools-version 6.3, and this manifest stays on 6.2.
+  `Package.resolved` pins 0.31.3.
 - Tokenizer parity tests skip when the CLIP BPE file from the weight
   bundle is absent. The checked-in stub fixture does not require the
   full bundle.

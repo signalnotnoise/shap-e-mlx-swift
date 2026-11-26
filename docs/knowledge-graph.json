@@ -6,7 +6,7 @@
     "verified_commit_note": "Line numbers for Swift sources, scripts/fetch_weights.py, scripts/test_fetch_weights.py, Package.swift, Package.resolved, README.md, and run_tests.sh were measured on this commit. The documentation commit does not modify those files. It does add a step to .github/workflows/ci.yml, so citations of that workflow match the workflow in the documentation commit. scripts/verify_docs.py checks the checkout, not that HEAD equals verified_commit.",
     "generated_at": "2026-11-26T16:00:00Z",
     "swift_tools_version": "6.2",
-    "mlx_swift_constraint": "from: 0.29.1; Package.resolved pins 0.31.3 (revision 61b9e011e09a62b489f6bd647958f1555bdf2896). Package.swift has no upper bound."
+    "mlx_swift_constraint": "\"0.31.3\"..<\"0.31.5\"; Package.resolved pins 0.31.3 (revision 61b9e011e09a62b489f6bd647958f1555bdf2896). Capped below 0.31.5 because 0.31.5+ requires swift-tools-version 6.3."
   },
   "location_index": {
     "tokenizer": [

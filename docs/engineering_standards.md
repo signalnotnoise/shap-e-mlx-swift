@@ -6,7 +6,7 @@ Invariants for this package. Generic Swift style is not restated here.
 
 `Package.swift:1` sets `swift-tools-version: 6.2`.
 
-The dependency is `https://github.com/ml-explore/mlx-swift` `from: "0.29.1"` (`Package.swift:22`). There is no upper bound in `Package.swift`. This repository does not record a written reason for the `0.29.1` floor, and it does not cap mlx-swift the way another package might.
+The dependency is `https://github.com/ml-explore/mlx-swift` `"0.31.3"..<"0.31.5"` (`Package.swift:22`), the same range as triposr-mlx-swift. mlx-swift 0.31.5 and later require swift-tools-version 6.3, and this manifest is 6.2, so do not raise the cap without moving the tools version. The floor is 0.31.3, the version `Package.resolved` pins and CI tests.
 
 `Package.resolved:4-11` pins mlx-swift `0.31.3` at revision `61b9e011e09a62b489f6bd647958f1555bdf2896`. `README.md:98` says the recorded M3 Max CLI run used that pin. Do not present a tighter range unless `Package.swift` gains one.
 

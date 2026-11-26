@@ -2,7 +2,7 @@
 
 ## Package
 
-`swift-tools-version: 6.2` (`Package.swift:1`). Platforms: macOS 14, iOS 17, visionOS 1 (`Package.swift:6-9`). mlx-swift is `from: "0.29.1"` with no upper bound (`Package.swift:22`). The lockfile pins 0.31.3 (`Package.resolved:4-11`).
+`swift-tools-version: 6.2` (`Package.swift:1`). Platforms: macOS 14, iOS 17, visionOS 1 (`Package.swift:6-9`). mlx-swift is `"0.31.3"..<"0.31.5"` (`Package.swift:22`), matching triposr-mlx-swift, because mlx-swift 0.31.5 and later require swift-tools-version 6.3. The lockfile pins 0.31.3 (`Package.resolved:4-11`).
 
 `ShapERuntime` depends on products `MLX` and `MLXNN` and processes `MarchingCubes.metal` (`Package.swift:25-31`).
 

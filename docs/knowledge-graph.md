@@ -27,7 +27,7 @@ flowchart TD
   imageTx --> samp
 ```
 
-`dLatent` and `nCtx` are bundle metadata (`RuntimeArtifactBundle.swift:133-138`), not literals in the sampler.
+`dLatent` and `nCtx` are bundle metadata (`RuntimeArtifactBundle.swift:140-141`), not literals in the sampler.
 
 ## Where to find things
 
@@ -40,7 +40,7 @@ flowchart TD
 | Marching cubes, CPU and Metal | `Sources/ShapERuntime/MarchingCubes.swift:24-125`, `Sources/ShapERuntime/MetalMarchingCubes.swift:40-72`, `Sources/ShapERuntime/MCTable.swift:2` |
 | Mesh export | `Sources/ShapERuntime/MeshExport.swift:19-70`, `Sources/ShapERuntime/MeshTopology.swift:22-112` |
 | CLI and A/B mesh | `Sources/ShapECLI/main.swift:418-593`, `Sources/ShapECLI/main.swift:212-234` |
-| Weights fetch and verify | `scripts/fetch_weights.py:32-59`, `scripts/fetch_weights.py:157-193` |
+| Weights fetch and verify | `scripts/fetch_weights.py:34-61`, `scripts/fetch_weights.py:180-218` |
 | Tests | `Tests/ShapERuntimeTests/RuntimeBundleFixture.swift:3-25`, `run_tests.sh:17-20` |
 | CI and manifest | `Package.swift:1-22`, `.github/workflows/ci.yml:36-48`, `Package.resolved:4-11` |
 

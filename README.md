@@ -4,6 +4,10 @@ A Swift package that runs the Shap-E text-to-3D and image-to-3D pipeline on Appl
 
 The library product is `ShapERuntime`. The executable product is `ShapECLI`. Model weights are not in this repository.
 
+![Shaded Metal mesh for the prompt a red chair](docs/red-chair.png)
+
+Shaded preview of the Metal mesh from the run in [Tested on](#tested-on). The OBJ has positions and faces. The picture uses a neutral gray material and stands the Z-up mesh upright.
+
 ## Install
 
 This repository has no version tag yet, so the snippet tracks `main`.
@@ -82,6 +86,29 @@ python3 scripts/fetch_weights.py --verify-only --output runtime_bundle
 | visionOS 1+ | yes | no |
 
 The macOS job does not download weights. Unit tests use `Tests/ShapERuntimeTests/Fixtures/runtime_bundle_stub/`, a small random-weight fixture with no trained parameters. Three CLIP tokenizer parity tests throw `XCTSkip` unless `bpe_simple_vocab_16e6.txt.gz` is available via `SHAP_E_BPE`, `SHAP_E_BUNDLE`, or `runtime_bundle/bpe_simple_vocab_16e6.txt.gz`. `ClipBPELocationTests` checks the omitted `--bpe` fallback with a temporary file and does not read the weight bundle. No test in this package loads the full weight bundle. Linux cannot build the MLX Metal shaders, so there is no Linux job.
+
+## Tested on
+
+Local run on an Apple M3 Max (14 CPU cores, 10 performance and 4 efficiency, 30 GPU cores, 36 GB unified memory), macOS 27.3 (26C5047e), Xcode 27.0 (27A5252f), Swift 6.4 (swiftlang-6.4.0.33.1).
+
+`xcodebuild test -scheme ShapERuntime-Package -destination platform=macOS` executed 40 tests, 0 failures. Three CLIP tokenizer tests skipped without the vocabulary file, then passed against `bpe_simple_vocab_16e6.txt.gz` from the weight bundle: `testEncodeParityForRepresentativePrompts`, `testTokenizeParityAndPadding`, `testTokenizeTruncationKeepsEndOfText`.
+
+`scripts/fetch_weights.py --revision v0.1.0` verified 1,102 checksummed files from [signalNotNoise/shap-e-mlx](https://huggingface.co/signalNotNoise/shap-e-mlx). Tag `v0.1.0` resolves to commit `d71f70a09b9c03535188d006a719edda5c19a6eb`.
+
+Release `ShapECLI`, from `xcodebuild -configuration Release` with mlx-swift 0.31.3 (MLX `default.metallib` and this package's marching-cubes Metal library):
+
+```bash
+ShapECLI --ab-mesh \
+  --bundle ~/.cache/shap-e-mlx \
+  --prompt "a red chair" \
+  --seed 7 \
+  --steps 64 \
+  --grid 64
+```
+
+`/usr/bin/time -l` reported 39.42 seconds real, 1.29 seconds user, 2.19 seconds sys, peak memory footprint 5,489,169,280 bytes, and maximum resident set size 5,856,296,960 bytes. The run printed guidance 15, the CLI default. The Metal mesh and the CPU mesh matched: 9,882 vertices, 19,684 faces, closed, 0 boundary edges. Metal marching cubes took 0.052 seconds. CPU marching cubes took 0.816 seconds.
+
+The picture at the top is a 768 by 768 shaded render of that Metal OBJ. The file stores positions and faces. The render uses a neutral gray material and a -90 degree rotation about X so the Z-up mesh stands upright. `powermetrics` requires root on this machine, so this section has no GPU-utilization percentage.
 
 ## Limitations
 

@@ -1,0 +1,11 @@
+version: 1
+builder:
+  configs:
+    - platform: macos-spm
+      documentation_targets: [ShapERuntime]
+    - platform: macos-xcodebuild
+      scheme: ShapERuntime-Package
+    - platform: ios
+      scheme: ShapERuntime-Package
+    - platform: visionos
+      scheme: ShapERuntime-Package

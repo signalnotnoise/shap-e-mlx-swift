@@ -1,0 +1,309 @@
+{
+  "artifact_version": 1,
+  "families": {
+    "clip_text": {
+      "metadata": {
+        "context_length": 77,
+        "tokenizer": {
+          "context_length": 77,
+          "type": "clip_bpe"
+        },
+        "transformer_heads": 2,
+        "transformer_layers": 3,
+        "transformer_width": 8
+      },
+      "tensors": {
+        "text_projection": {
+          "dtype": "float32",
+          "name": "text_projection",
+          "path": "clip_text/text_projection.bin",
+          "shape": [
+            2,
+            2
+          ]
+        },
+        "token_embedding.weight": {
+          "dtype": "float32",
+          "name": "token_embedding.weight",
+          "path": "clip_text/token_embedding__weight.bin",
+          "shape": [
+            4,
+            2
+          ]
+        }
+      },
+      "version": 1
+    },
+    "decoder_params": {
+      "metadata": {
+        "latent_ctx": 16,
+        "latent_warp_coeff1": 1,
+        "latent_warp_name": "identity",
+        "ln_eps": 1e-05,
+        "param_shapes": [
+          [
+            "nerstf.mlp.0.weight",
+            [
+              2,
+              3
+            ]
+          ]
+        ]
+      },
+      "tensors": {
+        "proj_nerstf__mlp__0__weight_bias_vc": {
+          "dtype": "float32",
+          "name": "proj_nerstf__mlp__0__weight_bias_vc",
+          "path": "decoder_params/proj_nerstf__mlp__0__weight_bias_vc.bin",
+          "shape": [
+            2,
+            3
+          ]
+        },
+        "proj_nerstf__mlp__0__weight_ln_bias_c": {
+          "dtype": "float32",
+          "name": "proj_nerstf__mlp__0__weight_ln_bias_c",
+          "path": "decoder_params/proj_nerstf__mlp__0__weight_ln_bias_c.bin",
+          "shape": [
+            3
+          ]
+        },
+        "proj_nerstf__mlp__0__weight_ln_weight_c": {
+          "dtype": "float32",
+          "name": "proj_nerstf__mlp__0__weight_ln_weight_c",
+          "path": "decoder_params/proj_nerstf__mlp__0__weight_ln_weight_c.bin",
+          "shape": [
+            3
+          ]
+        },
+        "proj_nerstf__mlp__0__weight_weight_vcd": {
+          "dtype": "float32",
+          "name": "proj_nerstf__mlp__0__weight_weight_vcd",
+          "path": "decoder_params/proj_nerstf__mlp__0__weight_weight_vcd.bin",
+          "shape": [
+            2,
+            3,
+            4
+          ]
+        }
+      },
+      "version": 1
+    },
+    "diffusion": {
+      "metadata": {
+        "model_mean_type": "epsilon",
+        "num_timesteps": 2
+      },
+      "tensors": {
+        "alphas_cumprod": {
+          "dtype": "float32",
+          "name": "alphas_cumprod",
+          "path": "diffusion/alphas_cumprod.bin",
+          "shape": [
+            2
+          ]
+        },
+        "betas": {
+          "dtype": "float32",
+          "name": "betas",
+          "path": "diffusion/betas.bin",
+          "shape": [
+            2
+          ]
+        },
+        "channel_biases": {
+          "dtype": "float32",
+          "name": "channel_biases",
+          "path": "diffusion/channel_biases.bin",
+          "shape": [
+            2
+          ]
+        },
+        "channel_scales": {
+          "dtype": "float32",
+          "name": "channel_scales",
+          "path": "diffusion/channel_scales.bin",
+          "shape": [
+            2
+          ]
+        },
+        "posterior_log_variance_clipped": {
+          "dtype": "float32",
+          "name": "posterior_log_variance_clipped",
+          "path": "diffusion/posterior_log_variance_clipped.bin",
+          "shape": [
+            2
+          ]
+        },
+        "posterior_mean_coef1": {
+          "dtype": "float32",
+          "name": "posterior_mean_coef1",
+          "path": "diffusion/posterior_mean_coef1.bin",
+          "shape": [
+            2
+          ]
+        },
+        "posterior_mean_coef2": {
+          "dtype": "float32",
+          "name": "posterior_mean_coef2",
+          "path": "diffusion/posterior_mean_coef2.bin",
+          "shape": [
+            2
+          ]
+        },
+        "sqrt_recip_alphas_cumprod": {
+          "dtype": "float32",
+          "name": "sqrt_recip_alphas_cumprod",
+          "path": "diffusion/sqrt_recip_alphas_cumprod.bin",
+          "shape": [
+            2
+          ]
+        },
+        "sqrt_recipm1_alphas_cumprod": {
+          "dtype": "float32",
+          "name": "sqrt_recipm1_alphas_cumprod",
+          "path": "diffusion/sqrt_recipm1_alphas_cumprod.bin",
+          "shape": [
+            2
+          ]
+        }
+      },
+      "version": 1
+    },
+    "renderer": {
+      "metadata": {
+        "channel_activation": "sigmoid",
+        "direction_dependent_shape": true,
+        "grid_size": 32,
+        "sdf_activation": "tanh",
+        "separate_coarse_channels": false,
+        "separate_nerf_channels": true,
+        "texture_channels": [
+          "R",
+          "G",
+          "B"
+        ]
+      },
+      "tensors": {
+        "bbox_max": {
+          "dtype": "float32",
+          "name": "bbox_max",
+          "path": "renderer/bbox_max.bin",
+          "shape": [
+            3
+          ]
+        },
+        "bbox_min": {
+          "dtype": "float32",
+          "name": "bbox_min",
+          "path": "renderer/bbox_min.bin",
+          "shape": [
+            3
+          ]
+        },
+        "mlp_0_bias": {
+          "dtype": "float32",
+          "name": "mlp_0_bias",
+          "path": "renderer/mlp_0_bias.bin",
+          "shape": [
+            2
+          ]
+        },
+        "mlp_1_bias": {
+          "dtype": "float32",
+          "name": "mlp_1_bias",
+          "path": "renderer/mlp_1_bias.bin",
+          "shape": [
+            2
+          ]
+        },
+        "mlp_2_bias": {
+          "dtype": "float32",
+          "name": "mlp_2_bias",
+          "path": "renderer/mlp_2_bias.bin",
+          "shape": [
+            2
+          ]
+        },
+        "mlp_3_bias": {
+          "dtype": "float32",
+          "name": "mlp_3_bias",
+          "path": "renderer/mlp_3_bias.bin",
+          "shape": [
+            2
+          ]
+        },
+        "mlp_4_bias": {
+          "dtype": "float32",
+          "name": "mlp_4_bias",
+          "path": "renderer/mlp_4_bias.bin",
+          "shape": [
+            2
+          ]
+        },
+        "mlp_4_weight": {
+          "dtype": "float32",
+          "name": "mlp_4_weight",
+          "path": "renderer/mlp_4_weight.bin",
+          "shape": [
+            2,
+            2
+          ]
+        },
+        "mlp_5_bias": {
+          "dtype": "float32",
+          "name": "mlp_5_bias",
+          "path": "renderer/mlp_5_bias.bin",
+          "shape": [
+            2
+          ]
+        },
+        "mlp_5_weight": {
+          "dtype": "float32",
+          "name": "mlp_5_weight",
+          "path": "renderer/mlp_5_weight.bin",
+          "shape": [
+            2,
+            2
+          ]
+        },
+        "mlp_6_bias": {
+          "dtype": "float32",
+          "name": "mlp_6_bias",
+          "path": "renderer/mlp_6_bias.bin",
+          "shape": [
+            2
+          ]
+        },
+        "mlp_6_weight": {
+          "dtype": "float32",
+          "name": "mlp_6_weight",
+          "path": "renderer/mlp_6_weight.bin",
+          "shape": [
+            2,
+            2
+          ]
+        }
+      },
+      "version": 1
+    },
+    "text300m": {
+      "metadata": {
+        "d_latent": 1024,
+        "n_ctx": 1024
+      },
+      "tensors": {
+        "wrapped.output_proj.weight": {
+          "dtype": "float32",
+          "name": "wrapped.output_proj.weight",
+          "path": "text300m/wrapped_output_proj_weight.bin",
+          "shape": [
+            2,
+            2
+          ]
+        }
+      },
+      "version": 1
+    }
+  }
+}

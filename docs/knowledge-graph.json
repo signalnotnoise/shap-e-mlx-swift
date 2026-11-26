@@ -1,0 +1,2541 @@
+{
+  "metadata": {
+    "repo": "signalnotnoise/shap-e-mlx-swift",
+    "branch": "cursor/shap-e-runtime-package-ea5b",
+    "verified_commit": "9d042666fbfbd40b07417cd23dfe34d0731d673f",
+    "verified_commit_note": "The checker does not use git history. It does not require verified_commit to equal HEAD or to be an ancestor of HEAD. Every cited line is checked against the working tree, including a source token named after the citation when the sentence has one.",
+    "generated_at": "2026-11-26T16:00:00Z",
+    "swift_tools_version": "6.2",
+    "mlx_swift_constraint": "\"0.31.3\"..<\"0.31.5\"; Package.resolved pins 0.31.3 (revision 61b9e011e09a62b489f6bd647958f1555bdf2896). Capped below 0.31.5 because 0.31.5+ requires swift-tools-version 6.3."
+  },
+  "location_index": {
+    "tokenizer": [
+      {
+        "file_path": "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift",
+        "line_start": 28,
+        "line_end": 358,
+        "symbol": "ClipSimpleTokenizer"
+      },
+      {
+        "file_path": "Sources/ShapERuntime/ClipBPELocation.swift",
+        "line_start": 4,
+        "line_end": 35,
+        "symbol": "ClipBPELocation"
+      },
+      {
+        "file_path": "Tests/ShapERuntimeTests/ClipSimpleTokenizerTests.swift",
+        "line_start": 11,
+        "line_end": 30,
+        "symbol": "SHAP_E_BPE"
+      }
+    ],
+    "text_encoder": [
+      {
+        "file_path": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift",
+        "line_start": 116,
+        "line_end": 122,
+        "symbol": "embedText"
+      },
+      {
+        "file_path": "Sources/ShapERuntime/Models/embeddings/ClipTextArtifact.swift",
+        "line_start": 1,
+        "line_end": 23,
+        "symbol": "ClipTextArtifact"
+      }
+    ],
+    "diffusion_sampling": [
+      {
+        "file_path": "Sources/ShapERuntime/KarrasSampler.swift",
+        "line_start": 315,
+        "line_end": 656,
+        "symbol": "KarrasSampler"
+      },
+      {
+        "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
+        "line_start": 363,
+        "line_end": 424,
+        "symbol": "predict"
+      },
+      {
+        "file_path": "Sources/ShapERuntime/DiffusionStep.swift",
+        "line_start": 35,
+        "line_end": 225,
+        "symbol": "DiffusionStep"
+      }
+    ],
+    "latent_decoding": [
+      {
+        "file_path": "Sources/ShapERuntime/DecoderParamsProjector.swift",
+        "line_start": 175,
+        "line_end": 249,
+        "symbol": "project"
+      },
+      {
+        "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
+        "line_start": 354,
+        "line_end": 406,
+        "symbol": "nerstfForward"
+      }
+    ],
+    "marching_cubes_metal_cpu": [
+      {
+        "file_path": "Sources/ShapERuntime/MarchingCubes.swift",
+        "line_start": 24,
+        "line_end": 125,
+        "symbol": "extract"
+      },
+      {
+        "file_path": "Sources/ShapERuntime/MetalMarchingCubes.swift",
+        "line_start": 40,
+        "line_end": 72,
+        "symbol": "setup"
+      },
+      {
+        "file_path": "Sources/ShapERuntime/MCTable.swift",
+        "line_start": 2,
+        "line_end": 2,
+        "symbol": "MC_TABLE"
+      }
+    ],
+    "mesh_export": [
+      {
+        "file_path": "Sources/ShapERuntime/MeshExport.swift",
+        "line_start": 19,
+        "line_end": 70,
+        "symbol": "writeOBJ"
+      },
+      {
+        "file_path": "Sources/ShapERuntime/MeshTopology.swift",
+        "line_start": 22,
+        "line_end": 112,
+        "symbol": "MeshTopology"
+      }
+    ],
+    "cli_and_ab_mesh": [
+      {
+        "file_path": "Sources/ShapECLI/main.swift",
+        "line_start": 418,
+        "line_end": 593,
+        "symbol": "runMeshAB"
+      },
+      {
+        "file_path": "Sources/ShapECLI/main.swift",
+        "line_start": 212,
+        "line_end": 234,
+        "symbol": "resolveBPE"
+      },
+      {
+        "file_path": "Sources/ShapECLI/main.swift",
+        "line_start": 255,
+        "line_end": 402,
+        "symbol": "runParityDump"
+      },
+      {
+        "file_path": "Sources/ShapECLI/ImageParity.swift",
+        "line_start": 89,
+        "line_end": 320,
+        "symbol": "run"
+      }
+    ],
+    "weights_fetch_verify": [
+      {
+        "file_path": "scripts/fetch_weights.py",
+        "line_start": 34,
+        "line_end": 61,
+        "symbol": "TEXT_FAMILIES"
+      },
+      {
+        "file_path": "scripts/fetch_weights.py",
+        "line_start": 180,
+        "line_end": 218,
+        "symbol": "verify_checksums"
+      },
+      {
+        "file_path": "scripts/test_fetch_weights.py",
+        "line_start": 48,
+        "line_end": 72,
+        "symbol": "text_only"
+      }
+    ],
+    "tests": [
+      {
+        "file_path": "Tests/ShapERuntimeTests/RuntimeBundleFixture.swift",
+        "line_start": 3,
+        "line_end": 25,
+        "symbol": "RuntimeBundleFixture"
+      },
+      {
+        "file_path": "Tests/ShapERuntimeTests/Fixtures/README.md",
+        "line_start": 28,
+        "line_end": 35,
+        "symbol": "Real Bundle"
+      },
+      {
+        "file_path": "run_tests.sh",
+        "line_start": 17,
+        "line_end": 20,
+        "symbol": "ShapERuntime-Package"
+      }
+    ],
+    "ci_and_manifest": [
+      {
+        "file_path": "Package.swift",
+        "line_start": 1,
+        "line_end": 22,
+        "symbol": "swift-tools-version"
+      },
+      {
+        "file_path": ".github/workflows/ci.yml",
+        "line_start": 36,
+        "line_end": 48,
+        "symbol": "ShapERuntime-Package"
+      },
+      {
+        "file_path": "Package.resolved",
+        "line_start": 4,
+        "line_end": 11,
+        "symbol": "mlx-swift"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "target:ShapERuntime",
+      "kind": "target",
+      "target": "ShapERuntime",
+      "file_path": "Package.swift",
+      "line_start": 13,
+      "line_end": 15,
+      "symbol": "ShapERuntime",
+      "summary": "Library product. Depends on MLX and MLXNN. Processes MarchingCubes.metal as a resource."
+    },
+    {
+      "id": "target:ShapECLI",
+      "kind": "target",
+      "target": "ShapECLI",
+      "file_path": "Package.swift",
+      "line_start": 17,
+      "line_end": 19,
+      "symbol": "ShapECLI",
+      "summary": "Executable product. Depends on ShapERuntime and MLX."
+    },
+    {
+      "id": "target:ShapERuntimeTests",
+      "kind": "target",
+      "target": "ShapERuntimeTests",
+      "file_path": "Package.swift",
+      "line_start": 41,
+      "line_end": 44,
+      "symbol": "ShapERuntimeTests",
+      "summary": "Unit-test target. Copies Tests/ShapERuntimeTests/Fixtures into the test bundle."
+    },
+    {
+      "id": "file:Sources/ShapECLI/ImageParity.swift",
+      "kind": "file",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/ImageParity.swift",
+      "line_start": 1,
+      "line_end": 320,
+      "symbol": "ImageParity.swift",
+      "summary": "Swift source file, 320 lines."
+    },
+    {
+      "id": "Sources/ShapECLI/ImageParity.swift::ImageParityDump@12",
+      "kind": "enum",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/ImageParity.swift",
+      "line_start": 12,
+      "line_end": 320,
+      "symbol": "ImageParityDump",
+      "summary": "ShapECLI --image-parity dump. Expects python_*.npy inputs that are not in this repository."
+    },
+    {
+      "id": "Sources/ShapECLI/ImageParity.swift::Options@13",
+      "kind": "struct",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/ImageParity.swift",
+      "line_start": 13,
+      "line_end": 21,
+      "symbol": "Options",
+      "summary": "Swift struct Options."
+    },
+    {
+      "id": "Sources/ShapECLI/ImageParity.swift::runtimeTensor@23",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/ImageParity.swift",
+      "line_start": 23,
+      "line_end": 44,
+      "symbol": "runtimeTensor",
+      "summary": "Swift func runtimeTensor."
+    },
+    {
+      "id": "Sources/ShapECLI/ImageParity.swift::loadArray@46",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/ImageParity.swift",
+      "line_start": 46,
+      "line_end": 49,
+      "symbol": "loadArray",
+      "summary": "Swift func loadArray."
+    },
+    {
+      "id": "Sources/ShapECLI/ImageParity.swift::makeCGImage@51",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/ImageParity.swift",
+      "line_start": 51,
+      "line_end": 87,
+      "symbol": "makeCGImage",
+      "summary": "Swift func makeCGImage."
+    },
+    {
+      "id": "Sources/ShapECLI/ImageParity.swift::run@89",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/ImageParity.swift",
+      "line_start": 89,
+      "line_end": 319,
+      "symbol": "run",
+      "summary": "Swift func run."
+    },
+    {
+      "id": "file:Sources/ShapECLI/main.swift",
+      "kind": "file",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 1,
+      "line_end": 776,
+      "symbol": "main.swift",
+      "summary": "Swift source file, 776 lines."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::NpyError@7",
+      "kind": "enum",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 7,
+      "line_end": 16,
+      "symbol": "NpyError",
+      "summary": "Swift enum NpyError."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::writeNpyFloat32@18",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 18,
+      "line_end": 51,
+      "symbol": "writeNpyFloat32",
+      "summary": "Swift func writeNpyFloat32."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::writeNpyInt32@53",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 53,
+      "line_end": 86,
+      "symbol": "writeNpyInt32",
+      "summary": "Swift func writeNpyInt32."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::writeMLXArray@88",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 88,
+      "line_end": 93,
+      "symbol": "writeMLXArray",
+      "summary": "Swift func writeMLXArray."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::loadNpyFloat32@95",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 95,
+      "line_end": 124,
+      "symbol": "loadNpyFloat32",
+      "summary": "Swift func loadNpyFloat32."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::sanitizeParamKeyPython@127",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 127,
+      "line_end": 140,
+      "symbol": "sanitizeParamKeyPython",
+      "summary": "Swift func sanitizeParamKeyPython."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::ParityCase@144",
+      "kind": "struct",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 144,
+      "line_end": 153,
+      "symbol": "ParityCase",
+      "summary": "Swift struct ParityCase."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::resolveRepoRoot@155",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 155,
+      "line_end": 171,
+      "symbol": "resolveRepoRoot",
+      "summary": "Swift func resolveRepoRoot."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::resolveParityDir@173",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 173,
+      "line_end": 191,
+      "symbol": "resolveParityDir",
+      "summary": "Swift func resolveParityDir."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::resolveBundle@193",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 193,
+      "line_end": 210,
+      "symbol": "resolveBundle",
+      "summary": "Swift func resolveBundle."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::resolveBPE@212",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 212,
+      "line_end": 234,
+      "symbol": "resolveBPE",
+      "summary": "Swift func resolveBPE."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::loadCase@236",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 236,
+      "line_end": 253,
+      "symbol": "loadCase",
+      "summary": "Swift func loadCase."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::runParityDump@255",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 255,
+      "line_end": 402,
+      "symbol": "runParityDump",
+      "summary": "Swift func runParityDump."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::resolveOutDir@406",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 406,
+      "line_end": 416,
+      "symbol": "resolveOutDir",
+      "summary": "Swift func resolveOutDir."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::runMeshAB@418",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 418,
+      "line_end": 593,
+      "symbol": "runMeshAB",
+      "summary": "Swift func runMeshAB."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::RunResult@489",
+      "kind": "struct",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 489,
+      "line_end": 495,
+      "symbol": "RunResult",
+      "summary": "Swift struct RunResult."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::runMC@498",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 498,
+      "line_end": 512,
+      "symbol": "runMC",
+      "summary": "Swift func runMC."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::Args@597",
+      "kind": "struct",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 597,
+      "line_end": 618,
+      "symbol": "Args",
+      "summary": "Swift struct Args."
+    },
+    {
+      "id": "Sources/ShapECLI/main.swift::parseArgs@620",
+      "kind": "func",
+      "target": "ShapECLI",
+      "file_path": "Sources/ShapECLI/main.swift",
+      "line_start": 620,
+      "line_end": 709,
+      "symbol": "parseArgs",
+      "summary": "Swift func parseArgs."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/ClipBPELocation.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ClipBPELocation.swift",
+      "line_start": 1,
+      "line_end": 35,
+      "symbol": "ClipBPELocation.swift",
+      "summary": "Swift source file, 35 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/ClipBPELocation.swift::ClipBPELocation@4",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ClipBPELocation.swift",
+      "line_start": 4,
+      "line_end": 35,
+      "symbol": "ClipBPELocation",
+      "summary": "Resolves --bpe, then <bundle>/bpe_simple_vocab_16e6.txt.gz."
+    },
+    {
+      "id": "Sources/ShapERuntime/ClipBPELocation.swift::fileURL@9",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ClipBPELocation.swift",
+      "line_start": 9,
+      "line_end": 11,
+      "symbol": "fileURL",
+      "summary": "Swift func fileURL."
+    },
+    {
+      "id": "Sources/ShapERuntime/ClipBPELocation.swift::resolve@20",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ClipBPELocation.swift",
+      "line_start": 20,
+      "line_end": 34,
+      "symbol": "resolve",
+      "summary": "Swift func resolve."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/DecoderParamsProjector.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DecoderParamsProjector.swift",
+      "line_start": 1,
+      "line_end": 354,
+      "symbol": "DecoderParamsProjector.swift",
+      "summary": "Swift source file, 354 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/DecoderParamsProjector.swift::DecoderParamsProjectorError@7",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DecoderParamsProjector.swift",
+      "line_start": 7,
+      "line_end": 46,
+      "symbol": "DecoderParamsProjectorError",
+      "summary": "Swift enum DecoderParamsProjectorError."
+    },
+    {
+      "id": "Sources/ShapERuntime/DecoderParamsProjector.swift::DecoderParamsProjector@53",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DecoderParamsProjector.swift",
+      "line_start": 53,
+      "line_end": 354,
+      "symbol": "DecoderParamsProjector",
+      "summary": "Projects a latent of rank 2, shape [B, D], into NeRF-STF parameter tensors."
+    },
+    {
+      "id": "Sources/ShapERuntime/DecoderParamsProjector.swift::FlatParamShape@54",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DecoderParamsProjector.swift",
+      "line_start": 54,
+      "line_end": 59,
+      "symbol": "FlatParamShape",
+      "summary": "Swift struct FlatParamShape."
+    },
+    {
+      "id": "Sources/ShapERuntime/DecoderParamsProjector.swift::ProjectionWeights@61",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DecoderParamsProjector.swift",
+      "line_start": 61,
+      "line_end": 67,
+      "symbol": "ProjectionWeights",
+      "summary": "Swift struct ProjectionWeights."
+    },
+    {
+      "id": "Sources/ShapERuntime/DecoderParamsProjector.swift::project@175",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DecoderParamsProjector.swift",
+      "line_start": 175,
+      "line_end": 249,
+      "symbol": "project",
+      "summary": "Swift func project.",
+      "tensor_signature": {
+        "input_shape": "[B, D]",
+        "output_shape": "named parameter tensors"
+      }
+    },
+    {
+      "id": "file:Sources/ShapERuntime/DiffusionStep.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DiffusionStep.swift",
+      "line_start": 1,
+      "line_end": 241,
+      "symbol": "DiffusionStep.swift",
+      "summary": "Swift source file, 241 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/DiffusionStep.swift::DiffusionStepOutput@16",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DiffusionStep.swift",
+      "line_start": 16,
+      "line_end": 32,
+      "symbol": "DiffusionStepOutput",
+      "summary": "Swift struct DiffusionStepOutput."
+    },
+    {
+      "id": "Sources/ShapERuntime/DiffusionStep.swift::DiffusionStep@36",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DiffusionStep.swift",
+      "line_start": 36,
+      "line_end": 225,
+      "symbol": "DiffusionStep",
+      "summary": "Swift enum DiffusionStep."
+    },
+    {
+      "id": "Sources/ShapERuntime/DiffusionStep.swift::splitVectorForward@42",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DiffusionStep.swift",
+      "line_start": 42,
+      "line_end": 62,
+      "symbol": "splitVectorForward",
+      "summary": "Swift func splitVectorForward."
+    },
+    {
+      "id": "Sources/ShapERuntime/DiffusionStep.swift::splitVectorForward@65",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DiffusionStep.swift",
+      "line_start": 65,
+      "line_end": 91,
+      "symbol": "splitVectorForward",
+      "summary": "Swift func splitVectorForward."
+    },
+    {
+      "id": "Sources/ShapERuntime/DiffusionStep.swift::pMeanVariance@113",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DiffusionStep.swift",
+      "line_start": 113,
+      "line_end": 131,
+      "symbol": "pMeanVariance",
+      "summary": "Swift func pMeanVariance."
+    },
+    {
+      "id": "Sources/ShapERuntime/DiffusionStep.swift::pMeanVariance@134",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DiffusionStep.swift",
+      "line_start": 134,
+      "line_end": 224,
+      "symbol": "pMeanVariance",
+      "summary": "Swift func pMeanVariance."
+    },
+    {
+      "id": "Sources/ShapERuntime/DiffusionStep.swift::DiffusionStepError@229",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/DiffusionStep.swift",
+      "line_start": 229,
+      "line_end": 241,
+      "symbol": "DiffusionStepError",
+      "summary": "Swift enum DiffusionStepError."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/Image300MArtifact.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Image300MArtifact.swift",
+      "line_start": 1,
+      "line_end": 102,
+      "symbol": "Image300MArtifact.swift",
+      "summary": "Swift source file, 102 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/Image300MArtifact.swift::TensorPath@4",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Image300MArtifact.swift",
+      "line_start": 4,
+      "line_end": 58,
+      "symbol": "TensorPath",
+      "summary": "Swift struct TensorPath."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/Image300MTransformer.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Image300MTransformer.swift",
+      "line_start": 1,
+      "line_end": 499,
+      "symbol": "Image300MTransformer.swift",
+      "summary": "Swift source file, 499 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/Image300MTransformer.swift::Image300MTransformerError@7",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Image300MTransformer.swift",
+      "line_start": 7,
+      "line_end": 37,
+      "symbol": "Image300MTransformerError",
+      "summary": "Swift enum Image300MTransformerError."
+    },
+    {
+      "id": "Sources/ShapERuntime/Image300MTransformer.swift::Image300MTransformer@51",
+      "kind": "class",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Image300MTransformer.swift",
+      "line_start": 51,
+      "line_end": 498,
+      "symbol": "Image300MTransformer",
+      "summary": "Image-conditioned diffusion transformer. Same predict contract family as Text300M, loaded lazily."
+    },
+    {
+      "id": "Sources/ShapERuntime/Image300MTransformer.swift::Configuration@53",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Image300MTransformer.swift",
+      "line_start": 53,
+      "line_end": 88,
+      "symbol": "Configuration",
+      "summary": "Swift struct Configuration."
+    },
+    {
+      "id": "Sources/ShapERuntime/Image300MTransformer.swift::TransformerLayer@90",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Image300MTransformer.swift",
+      "line_start": 90,
+      "line_end": 103,
+      "symbol": "TransformerLayer",
+      "summary": "Swift struct TransformerLayer."
+    },
+    {
+      "id": "Sources/ShapERuntime/Image300MTransformer.swift::inferConfiguration@192",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Image300MTransformer.swift",
+      "line_start": 192,
+      "line_end": 230,
+      "symbol": "inferConfiguration",
+      "summary": "Swift func inferConfiguration."
+    },
+    {
+      "id": "Sources/ShapERuntime/Image300MTransformer.swift::predict@232",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Image300MTransformer.swift",
+      "line_start": 232,
+      "line_end": 251,
+      "symbol": "predict",
+      "summary": "Swift func predict."
+    },
+    {
+      "id": "Sources/ShapERuntime/Image300MTransformer.swift::predictInternal@253",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Image300MTransformer.swift",
+      "line_start": 253,
+      "line_end": 271,
+      "symbol": "predictInternal",
+      "summary": "Swift func predictInternal."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/ImageProcessor.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ImageProcessor.swift",
+      "line_start": 1,
+      "line_end": 92,
+      "symbol": "ImageProcessor.swift",
+      "summary": "Swift source file, 92 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/ImageProcessor.swift::ImageProcessor@5",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ImageProcessor.swift",
+      "line_start": 5,
+      "line_end": 92,
+      "symbol": "ImageProcessor",
+      "summary": "CGImage to CLIP NHWC input. processCLIPImage returns float32 [1, 224, 224, 3]."
+    },
+    {
+      "id": "Sources/ShapERuntime/ImageProcessor.swift::ImageProcessorError@7",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ImageProcessor.swift",
+      "line_start": 7,
+      "line_end": 19,
+      "symbol": "ImageProcessorError",
+      "summary": "Swift enum ImageProcessorError."
+    },
+    {
+      "id": "Sources/ShapERuntime/ImageProcessor.swift::processCLIPImage@26",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ImageProcessor.swift",
+      "line_start": 26,
+      "line_end": 91,
+      "symbol": "processCLIPImage",
+      "summary": "Swift func processCLIPImage.",
+      "tensor_signature": {
+        "input_shape": "CGImage",
+        "output_shape": "[1, 224, 224, 3]"
+      }
+    },
+    {
+      "id": "file:Sources/ShapERuntime/KarrasSampler.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/KarrasSampler.swift",
+      "line_start": 1,
+      "line_end": 656,
+      "symbol": "KarrasSampler.swift",
+      "summary": "Swift source file, 656 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/KarrasSampler.swift::KarrasSampleResult@11",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/KarrasSampler.swift",
+      "line_start": 11,
+      "line_end": 18,
+      "symbol": "KarrasSampleResult",
+      "summary": "Swift struct KarrasSampleResult."
+    },
+    {
+      "id": "Sources/ShapERuntime/KarrasSampler.swift::KarrasSigmas@22",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/KarrasSampler.swift",
+      "line_start": 22,
+      "line_end": 42,
+      "symbol": "KarrasSigmas",
+      "summary": "Swift enum KarrasSigmas."
+    },
+    {
+      "id": "Sources/ShapERuntime/KarrasSampler.swift::build@25",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/KarrasSampler.swift",
+      "line_start": 25,
+      "line_end": 41,
+      "symbol": "build",
+      "summary": "Swift func build."
+    },
+    {
+      "id": "Sources/ShapERuntime/KarrasSampler.swift::DiffusionTransformer@46",
+      "kind": "protocol",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/KarrasSampler.swift",
+      "line_start": 46,
+      "line_end": 53,
+      "symbol": "DiffusionTransformer",
+      "summary": "Swift protocol DiffusionTransformer."
+    },
+    {
+      "id": "Sources/ShapERuntime/KarrasSampler.swift::KarrasSamplerError@55",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/KarrasSampler.swift",
+      "line_start": 55,
+      "line_end": 70,
+      "symbol": "KarrasSamplerError",
+      "summary": "Swift enum KarrasSamplerError."
+    },
+    {
+      "id": "Sources/ShapERuntime/KarrasSampler.swift::GaussianToKarrasDenoiser@72",
+      "kind": "class",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/KarrasSampler.swift",
+      "line_start": 72,
+      "line_end": 312,
+      "symbol": "GaussianToKarrasDenoiser",
+      "summary": "Maps Karras sigma to the diffusion timestep schedule stored in the bundle and calls the transformer."
+    },
+    {
+      "id": "Sources/ShapERuntime/KarrasSampler.swift::KarrasSampler@316",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/KarrasSampler.swift",
+      "line_start": 316,
+      "line_end": 656,
+      "symbol": "KarrasSampler",
+      "summary": "Heun-style Karras sampler. ShapERuntime passes latent shape (batchSize, dLatent) from the artifact."
+    },
+    {
+      "id": "Sources/ShapERuntime/KarrasSampler.swift::Config@318",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/KarrasSampler.swift",
+      "line_start": 318,
+      "line_end": 364,
+      "symbol": "Config",
+      "summary": "Swift struct Config."
+    },
+    {
+      "id": "Sources/ShapERuntime/KarrasSampler.swift::sample@366",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/KarrasSampler.swift",
+      "line_start": 366,
+      "line_end": 550,
+      "symbol": "sample",
+      "summary": "Swift func sample."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/MCTable.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MCTable.swift",
+      "line_start": 1,
+      "line_end": 259,
+      "symbol": "MCTable.swift",
+      "summary": "Swift source file, 259 lines."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/MarchingCubes.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MarchingCubes.swift",
+      "line_start": 1,
+      "line_end": 261,
+      "symbol": "MarchingCubes.swift",
+      "summary": "Swift source file, 261 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/MarchingCubes.swift::MarchingCubes@14",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MarchingCubes.swift",
+      "line_start": 14,
+      "line_end": 216,
+      "symbol": "MarchingCubes",
+      "summary": "CPU marching cubes. extract takes an SDF [X, Y, Z] and returns verts [V, 3] and faces [F, 3]."
+    },
+    {
+      "id": "Sources/ShapERuntime/MarchingCubes.swift::extract@24",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MarchingCubes.swift",
+      "line_start": 24,
+      "line_end": 125,
+      "symbol": "extract",
+      "summary": "Swift func extract.",
+      "tensor_signature": {
+        "input_shape": "SDF [X, Y, Z]",
+        "output_shape": "verts [V, 3], faces [F, 3]"
+      }
+    },
+    {
+      "id": "Sources/ShapERuntime/MarchingCubes.swift::LookupTable@221",
+      "kind": "class",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MarchingCubes.swift",
+      "line_start": 221,
+      "line_end": 261,
+      "symbol": "LookupTable",
+      "summary": "Swift class LookupTable."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/MeshExport.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MeshExport.swift",
+      "line_start": 1,
+      "line_end": 91,
+      "symbol": "MeshExport.swift",
+      "summary": "Swift source file, 91 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/MeshExport.swift::MeshExportError@3",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MeshExport.swift",
+      "line_start": 3,
+      "line_end": 13,
+      "symbol": "MeshExportError",
+      "summary": "Swift enum MeshExportError."
+    },
+    {
+      "id": "Sources/ShapERuntime/MeshExport.swift::MeshExport@15",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MeshExport.swift",
+      "line_start": 15,
+      "line_end": 91,
+      "symbol": "MeshExport",
+      "summary": "Writes a Wavefront OBJ. Vertices are float triples. Faces are 0-based in memory and written 1-based."
+    },
+    {
+      "id": "Sources/ShapERuntime/MeshExport.swift::writeOBJ@19",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MeshExport.swift",
+      "line_start": 19,
+      "line_end": 70,
+      "symbol": "writeOBJ",
+      "summary": "Swift func writeOBJ."
+    },
+    {
+      "id": "Sources/ShapERuntime/MeshExport.swift::writeOBJ@73",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MeshExport.swift",
+      "line_start": 73,
+      "line_end": 90,
+      "symbol": "writeOBJ",
+      "summary": "Swift func writeOBJ."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/MeshTopology.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MeshTopology.swift",
+      "line_start": 1,
+      "line_end": 112,
+      "symbol": "MeshTopology.swift",
+      "summary": "Swift source file, 112 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/MeshTopology.swift::MeshTopologyStats@4",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MeshTopology.swift",
+      "line_start": 4,
+      "line_end": 21,
+      "symbol": "MeshTopologyStats",
+      "summary": "Swift struct MeshTopologyStats."
+    },
+    {
+      "id": "Sources/ShapERuntime/MeshTopology.swift::MeshTopology@23",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MeshTopology.swift",
+      "line_start": 23,
+      "line_end": 112,
+      "symbol": "MeshTopology",
+      "summary": "Counts boundary, non-manifold, and invalid edges for the CLI mesh A/B report."
+    },
+    {
+      "id": "Sources/ShapERuntime/MeshTopology.swift::EdgeKey@25",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MeshTopology.swift",
+      "line_start": 25,
+      "line_end": 37,
+      "symbol": "EdgeKey",
+      "summary": "Swift struct EdgeKey."
+    },
+    {
+      "id": "Sources/ShapERuntime/MeshTopology.swift::stats@40",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MeshTopology.swift",
+      "line_start": 40,
+      "line_end": 78,
+      "symbol": "stats",
+      "summary": "Swift func stats."
+    },
+    {
+      "id": "Sources/ShapERuntime/MeshTopology.swift::compare@81",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MeshTopology.swift",
+      "line_start": 81,
+      "line_end": 111,
+      "symbol": "compare",
+      "summary": "Swift func compare."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/MetalMarchingCubes.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MetalMarchingCubes.swift",
+      "line_start": 1,
+      "line_end": 217,
+      "symbol": "MetalMarchingCubes.swift",
+      "summary": "Swift source file, 217 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/MetalMarchingCubes.swift::MetalMarchingCubesError@6",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MetalMarchingCubes.swift",
+      "line_start": 6,
+      "line_end": 23,
+      "symbol": "MetalMarchingCubesError",
+      "summary": "Swift enum MetalMarchingCubesError."
+    },
+    {
+      "id": "Sources/ShapERuntime/MetalMarchingCubes.swift::MetalMarchingCubes@25",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MetalMarchingCubes.swift",
+      "line_start": 25,
+      "line_end": 217,
+      "symbol": "MetalMarchingCubes",
+      "summary": "Metal marching cubes. Loads countTriangles and extractMesh from Bundle.module and shares LookupTable with the CPU path."
+    },
+    {
+      "id": "Sources/ShapERuntime/MetalMarchingCubes.swift::Uniforms@26",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MetalMarchingCubes.swift",
+      "line_start": 26,
+      "line_end": 30,
+      "symbol": "Uniforms",
+      "summary": "Swift struct Uniforms."
+    },
+    {
+      "id": "Sources/ShapERuntime/MetalMarchingCubes.swift::extract@75",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MetalMarchingCubes.swift",
+      "line_start": 75,
+      "line_end": 216,
+      "symbol": "extract",
+      "summary": "Swift func extract."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/Models/embeddings/ClipImageEmbedder.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipImageEmbedder.swift",
+      "line_start": 1,
+      "line_end": 202,
+      "symbol": "ClipImageEmbedder.swift",
+      "summary": "Swift source file, 202 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipImageEmbedder.swift::ClipImageEmbedderError@4",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipImageEmbedder.swift",
+      "line_start": 4,
+      "line_end": 19,
+      "symbol": "ClipImageEmbedderError",
+      "summary": "Swift enum ClipImageEmbedderError."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipImageEmbedder.swift::ClipImageEmbedder@21",
+      "kind": "class",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipImageEmbedder.swift",
+      "line_start": 21,
+      "line_end": 202,
+      "symbol": "ClipImageEmbedder",
+      "summary": "CLIP vision transformer. embedImagesGrid consumes a normalized image tensor."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipImageEmbedder.swift::TransformerLayer@22",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipImageEmbedder.swift",
+      "line_start": 22,
+      "line_end": 35,
+      "symbol": "TransformerLayer",
+      "summary": "Swift struct TransformerLayer."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipImageEmbedder.swift::embedImagesGrid@100",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipImageEmbedder.swift",
+      "line_start": 100,
+      "line_end": 185,
+      "symbol": "embedImagesGrid",
+      "summary": "Swift func embedImagesGrid."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift",
+      "line_start": 1,
+      "line_end": 358,
+      "symbol": "ClipSimpleTokenizer.swift",
+      "summary": "Swift source file, 358 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift::ClipTokenizerError@4",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift",
+      "line_start": 4,
+      "line_end": 22,
+      "symbol": "ClipTokenizerError",
+      "summary": "Swift enum ClipTokenizerError."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift::StringPair@24",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift",
+      "line_start": 24,
+      "line_end": 27,
+      "symbol": "StringPair",
+      "summary": "Swift struct StringPair."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift::ClipSimpleTokenizer@29",
+      "kind": "class",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift",
+      "line_start": 29,
+      "line_end": 358,
+      "symbol": "ClipSimpleTokenizer",
+      "summary": "CLIP BPE tokenizer. encode and tokenize read bpe_simple_vocab_16e6.txt.gz."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift::encode@76",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift",
+      "line_start": 76,
+      "line_end": 97,
+      "symbol": "encode",
+      "summary": "Swift func encode."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift::tokenize@99",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift",
+      "line_start": 99,
+      "line_end": 114,
+      "symbol": "tokenize",
+      "summary": "Swift func tokenize."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/Models/embeddings/ClipTextArtifact.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipTextArtifact.swift",
+      "line_start": 1,
+      "line_end": 109,
+      "symbol": "ClipTextArtifact.swift",
+      "summary": "Swift source file, 109 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipTextArtifact.swift::ClipTextArtifact@3",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipTextArtifact.swift",
+      "line_start": 3,
+      "line_end": 23,
+      "symbol": "ClipTextArtifact",
+      "summary": "Swift struct ClipTextArtifact."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipTextArtifact.swift::TensorPath@26",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipTextArtifact.swift",
+      "line_start": 26,
+      "line_end": 65,
+      "symbol": "TensorPath",
+      "summary": "Swift struct TensorPath."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift",
+      "line_start": 1,
+      "line_end": 310,
+      "symbol": "ClipTextEmbedder.swift",
+      "summary": "Swift source file, 310 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift::ClipTextEmbedderError@4",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift",
+      "line_start": 4,
+      "line_end": 28,
+      "symbol": "ClipTextEmbedderError",
+      "summary": "Swift enum ClipTextEmbedderError."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift::ClipTextEmbedder@30",
+      "kind": "class",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift",
+      "line_start": 30,
+      "line_end": 310,
+      "symbol": "ClipTextEmbedder",
+      "summary": "CLIP text transformer. embedText returns a float tensor of shape [batch, textProjectionDim]."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift::TransformerLayer@31",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift",
+      "line_start": 31,
+      "line_end": 45,
+      "symbol": "TransformerLayer",
+      "summary": "Swift struct TransformerLayer."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift::embedText@116",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift",
+      "line_start": 116,
+      "line_end": 122,
+      "symbol": "embedText",
+      "summary": "Swift func embedText.",
+      "tensor_signature": {
+        "input_shape": "[String]",
+        "output_shape": "[batch, textProjectionDim]"
+      }
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift::embedTokenIDs@124",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift",
+      "line_start": 124,
+      "line_end": 252,
+      "symbol": "embedTokenIDs",
+      "summary": "Swift func embedTokenIDs."
+    },
+    {
+      "id": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift::selectPoolIndices@254",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift",
+      "line_start": 254,
+      "line_end": 264,
+      "symbol": "selectPoolIndices",
+      "summary": "Swift func selectPoolIndices."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 1,
+      "line_end": 449,
+      "symbol": "RuntimeArtifactBundle.swift",
+      "summary": "Swift source file, 449 lines."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/RuntimeBundleRequirements.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeBundleRequirements.swift",
+      "line_start": 1,
+      "line_end": 49,
+      "symbol": "RuntimeBundleRequirements.swift",
+      "summary": "Required bundle paths: manifest.json, the BPE file, and manifest tensor paths for the text or full scope."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeBundleRequirements.swift::RuntimeBundleRequirements@9",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeBundleRequirements.swift",
+      "line_start": 9,
+      "line_end": 49,
+      "symbol": "RuntimeBundleRequirements",
+      "summary": "Checks that manifest.json, the CLIP BPE file, and scoped tensor blobs exist. Checksums are enforced by fetch_weights.py."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactBundle.swift::RuntimeArtifactError@3",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 3,
+      "line_end": 47,
+      "symbol": "RuntimeArtifactError",
+      "summary": "Swift enum RuntimeArtifactError."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactBundle.swift::RuntimeArtifactBundle@49",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 49,
+      "line_end": 452,
+      "symbol": "RuntimeArtifactBundle",
+      "summary": "Loads manifest.json and the tensor families. n_ctx and d_latent come from family metadata, not from hardcoded production sizes."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactBundle.swift::manifestURL@84",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 84,
+      "line_end": 86,
+      "symbol": "manifestURL",
+      "summary": "Swift func manifestURL."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactBundle.swift::familyVersion@88",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 88,
+      "line_end": 90,
+      "symbol": "familyVersion",
+      "summary": "Swift func familyVersion."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactBundle.swift::requireFamily@92",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 92,
+      "line_end": 101,
+      "symbol": "requireFamily",
+      "summary": "Swift func requireFamily."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactBundle.swift::loadFamilyTensors@103",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 103,
+      "line_end": 116,
+      "symbol": "loadFamilyTensors",
+      "summary": "Swift func loadFamilyTensors."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactBundle.swift::loadClipTextArtifact@118",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 118,
+      "line_end": 134,
+      "symbol": "loadClipTextArtifact",
+      "summary": "Swift func loadClipTextArtifact."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactBundle.swift::loadText300MArtifact@136",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 136,
+      "line_end": 144,
+      "symbol": "loadText300MArtifact",
+      "summary": "Swift func loadText300MArtifact."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactBundle.swift::loadImage300MArtifact@146",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 146,
+      "line_end": 154,
+      "symbol": "loadImage300MArtifact",
+      "summary": "Swift func loadImage300MArtifact."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactBundle.swift::loadClipVisionArtifact@156",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 156,
+      "line_end": 170,
+      "symbol": "loadClipVisionArtifact",
+      "summary": "Swift func loadClipVisionArtifact."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactBundle.swift::loadDiffusionConfig@172",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 172,
+      "line_end": 207,
+      "symbol": "loadDiffusionConfig",
+      "summary": "Swift func loadDiffusionConfig."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactBundle.swift::loadDecoderParamsArtifact@209",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 209,
+      "line_end": 236,
+      "symbol": "loadDecoderParamsArtifact",
+      "summary": "Swift func loadDecoderParamsArtifact."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactBundle.swift::loadRendererArtifact@238",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactBundle.swift",
+      "line_start": 238,
+      "line_end": 296,
+      "symbol": "loadRendererArtifact",
+      "summary": "Swift func loadRendererArtifact."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/RuntimeArtifactTypes.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactTypes.swift",
+      "line_start": 1,
+      "line_end": 195,
+      "symbol": "RuntimeArtifactTypes.swift",
+      "summary": "Swift source file, 195 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactTypes.swift::Text300MArtifact@3",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactTypes.swift",
+      "line_start": 3,
+      "line_end": 17,
+      "symbol": "Text300MArtifact",
+      "summary": "Swift struct Text300MArtifact."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactTypes.swift::Image300MArtifact@19",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactTypes.swift",
+      "line_start": 19,
+      "line_end": 33,
+      "symbol": "Image300MArtifact",
+      "summary": "Swift struct Image300MArtifact."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactTypes.swift::ClipVisionArtifact@35",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactTypes.swift",
+      "line_start": 35,
+      "line_end": 61,
+      "symbol": "ClipVisionArtifact",
+      "summary": "Swift struct ClipVisionArtifact."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactTypes.swift::RuntimeDiffusionConfig@63",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactTypes.swift",
+      "line_start": 63,
+      "line_end": 101,
+      "symbol": "RuntimeDiffusionConfig",
+      "summary": "Swift struct RuntimeDiffusionConfig."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactTypes.swift::DecoderParamShape@103",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactTypes.swift",
+      "line_start": 103,
+      "line_end": 111,
+      "symbol": "DecoderParamShape",
+      "summary": "Swift struct DecoderParamShape."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactTypes.swift::DecoderProjectionWeights@113",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactTypes.swift",
+      "line_start": 113,
+      "line_end": 130,
+      "symbol": "DecoderProjectionWeights",
+      "summary": "Swift struct DecoderProjectionWeights."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactTypes.swift::DecoderParamsArtifact@132",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactTypes.swift",
+      "line_start": 132,
+      "line_end": 155,
+      "symbol": "DecoderParamsArtifact",
+      "summary": "Swift struct DecoderParamsArtifact."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeArtifactTypes.swift::RendererArtifact@157",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeArtifactTypes.swift",
+      "line_start": 157,
+      "line_end": 195,
+      "symbol": "RendererArtifact",
+      "summary": "Swift struct RendererArtifact."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/RuntimeCoreTypes.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeCoreTypes.swift",
+      "line_start": 1,
+      "line_end": 98,
+      "symbol": "RuntimeCoreTypes.swift",
+      "summary": "Swift source file, 98 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeCoreTypes.swift::ArtifactVersionInfo@3",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeCoreTypes.swift",
+      "line_start": 3,
+      "line_end": 13,
+      "symbol": "ArtifactVersionInfo",
+      "summary": "Swift struct ArtifactVersionInfo."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeCoreTypes.swift::BoundingBox@15",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeCoreTypes.swift",
+      "line_start": 15,
+      "line_end": 23,
+      "symbol": "BoundingBox",
+      "summary": "Swift struct BoundingBox."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeCoreTypes.swift::LatentResult@25",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeCoreTypes.swift",
+      "line_start": 25,
+      "line_end": 54,
+      "symbol": "LatentResult",
+      "summary": "Swift struct LatentResult."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeCoreTypes.swift::MeshResult@56",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeCoreTypes.swift",
+      "line_start": 56,
+      "line_end": 79,
+      "symbol": "MeshResult",
+      "summary": "Swift struct MeshResult."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeCoreTypes.swift::MeshBatchResult@81",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeCoreTypes.swift",
+      "line_start": 81,
+      "line_end": 98,
+      "symbol": "MeshBatchResult",
+      "summary": "Swift struct MeshBatchResult."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/RuntimeManifest.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeManifest.swift",
+      "line_start": 1,
+      "line_end": 153,
+      "symbol": "RuntimeManifest.swift",
+      "summary": "Swift source file, 153 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeManifest.swift::JSONValue@3",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeManifest.swift",
+      "line_start": 3,
+      "line_end": 106,
+      "symbol": "JSONValue",
+      "summary": "Swift enum JSONValue."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeManifest.swift::encode@37",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeManifest.swift",
+      "line_start": 37,
+      "line_end": 55,
+      "symbol": "encode",
+      "summary": "Swift func encode."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeManifest.swift::TensorEntry@108",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeManifest.swift",
+      "line_start": 108,
+      "line_end": 120,
+      "symbol": "TensorEntry",
+      "summary": "Swift struct TensorEntry."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeManifest.swift::ArtifactFamilyManifest@122",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeManifest.swift",
+      "line_start": 122,
+      "line_end": 136,
+      "symbol": "ArtifactFamilyManifest",
+      "summary": "Swift struct ArtifactFamilyManifest."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeManifest.swift::RuntimeArtifactManifest@138",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeManifest.swift",
+      "line_start": 138,
+      "line_end": 153,
+      "symbol": "RuntimeArtifactManifest",
+      "summary": "Swift struct RuntimeArtifactManifest."
+    },
+    {
+      "id": "Sources/ShapERuntime/RuntimeManifest.swift::CodingKeys@144",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/RuntimeManifest.swift",
+      "line_start": 144,
+      "line_end": 147,
+      "symbol": "CodingKeys",
+      "summary": "Swift enum CodingKeys."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/STFMeshRenderer.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
+      "line_start": 1,
+      "line_end": 534,
+      "symbol": "STFMeshRenderer.swift",
+      "summary": "Swift source file, 534 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/STFMeshRenderer.swift::STFMeshRenderer@36",
+      "kind": "class",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
+      "line_start": 36,
+      "line_end": 506,
+      "symbol": "STFMeshRenderer",
+      "summary": "Queries the NeRF-STF field and extracts meshes. Default query batch is 65536. Chooses CPU or Metal marching cubes."
+    },
+    {
+      "id": "Sources/ShapERuntime/STFMeshRenderer.swift::signedDistance@100",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
+      "line_start": 100,
+      "line_end": 105,
+      "symbol": "signedDistance",
+      "summary": "Swift func signedDistance."
+    },
+    {
+      "id": "Sources/ShapERuntime/STFMeshRenderer.swift::textureChannels@108",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
+      "line_start": 108,
+      "line_end": 114,
+      "symbol": "textureChannels",
+      "summary": "Swift func textureChannels."
+    },
+    {
+      "id": "Sources/ShapERuntime/STFMeshRenderer.swift::extractMesh@118",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
+      "line_start": 118,
+      "line_end": 136,
+      "symbol": "extractMesh",
+      "summary": "Swift func extractMesh."
+    },
+    {
+      "id": "Sources/ShapERuntime/STFMeshRenderer.swift::extractSDFFields@146",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
+      "line_start": 146,
+      "line_end": 192,
+      "symbol": "extractSDFFields",
+      "summary": "Swift func extractSDFFields."
+    },
+    {
+      "id": "Sources/ShapERuntime/STFMeshRenderer.swift::meshFromSDFField@198",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
+      "line_start": 198,
+      "line_end": 234,
+      "symbol": "meshFromSDFField",
+      "summary": "Swift func meshFromSDFField."
+    },
+    {
+      "id": "Sources/ShapERuntime/STFMeshRenderer.swift::extractMeshes@242",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
+      "line_start": 242,
+      "line_end": 347,
+      "symbol": "extractMeshes",
+      "summary": "Swift func extractMeshes."
+    },
+    {
+      "id": "Sources/ShapERuntime/STFMeshRenderer.swift::volumeQueryPoints@461",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
+      "line_start": 461,
+      "line_end": 483,
+      "symbol": "volumeQueryPoints",
+      "summary": "Swift func volumeQueryPoints."
+    },
+    {
+      "id": "Sources/ShapERuntime/STFMeshRenderer.swift::STFRendererError@510",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
+      "line_start": 510,
+      "line_end": 534,
+      "symbol": "STFRendererError",
+      "summary": "Swift enum STFRendererError."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/ShapELogger.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapELogger.swift",
+      "line_start": 1,
+      "line_end": 20,
+      "symbol": "ShapELogger.swift",
+      "summary": "Swift source file, 20 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapELogger.swift::ShapELogger@9",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapELogger.swift",
+      "line_start": 9,
+      "line_end": 20,
+      "symbol": "ShapELogger",
+      "summary": "Swift struct ShapELogger."
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapELogger.swift::debug@14",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapELogger.swift",
+      "line_start": 14,
+      "line_end": 19,
+      "symbol": "debug",
+      "summary": "Swift func debug."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/ShapERuntime.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 1,
+      "line_end": 594,
+      "symbol": "ShapERuntime.swift",
+      "summary": "Swift source file, 594 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::ShapEMeshResult@9",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 9,
+      "line_end": 45,
+      "symbol": "ShapEMeshResult",
+      "summary": "Public mesh result. verticesArray is [Float] length V*3. facesArray is [Int32] length F*3."
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::mlxVertices@14",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 14,
+      "line_end": 16,
+      "symbol": "mlxVertices",
+      "summary": "Swift func mlxVertices."
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::mlxFaces@19",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 19,
+      "line_end": 21,
+      "symbol": "mlxFaces",
+      "summary": "Swift func mlxFaces."
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::mlxTextureChannel@24",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 24,
+      "line_end": 26,
+      "symbol": "mlxTextureChannel",
+      "summary": "Swift func mlxTextureChannel."
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::verticesArray@29",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 29,
+      "line_end": 31,
+      "symbol": "verticesArray",
+      "summary": "Swift func verticesArray."
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::facesArray@34",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 34,
+      "line_end": 36,
+      "symbol": "facesArray",
+      "summary": "Swift func facesArray."
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::colorsArray@39",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 39,
+      "line_end": 44,
+      "symbol": "colorsArray",
+      "summary": "Swift func colorsArray."
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::ShapERuntimeError@47",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 47,
+      "line_end": 64,
+      "symbol": "ShapERuntimeError",
+      "summary": "Swift enum ShapERuntimeError."
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::ShapERuntime@68",
+      "kind": "class",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 68,
+      "line_end": 583,
+      "symbol": "ShapERuntime",
+      "summary": "End-to-end text and image mesh runtime. Loads the bundle, CLIP text, Text300M, the Karras denoiser, the decoder projector, and the STF renderer. Image weights load on the first image call."
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::generate@209",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 209,
+      "line_end": 237,
+      "symbol": "generate",
+      "summary": "Swift func generate.",
+      "tensor_signature": {
+        "input_shape": "prompt String",
+        "output_shape": "ShapEMeshResult"
+      }
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::generate@248",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 248,
+      "line_end": 397,
+      "symbol": "generate",
+      "summary": "Swift func generate.",
+      "tensor_signature": {
+        "input_shape": "prompt String, batchSize Int",
+        "output_shape": "[ShapEMeshResult]"
+      }
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::generate@401",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 401,
+      "line_end": 430,
+      "symbol": "generate",
+      "summary": "Swift func generate.",
+      "tensor_signature": {
+        "input_shape": "CGImage",
+        "output_shape": "[ShapEMeshResult]"
+      }
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::generate@436",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 436,
+      "line_end": 582,
+      "symbol": "generate",
+      "summary": "Swift func generate.",
+      "tensor_signature": {
+        "input_shape": "[1, 224, 224, 3]",
+        "output_shape": "[ShapEMeshResult]"
+      }
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::MeshAssemblyError@585",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 585,
+      "line_end": 594,
+      "symbol": "MeshAssemblyError",
+      "summary": "Swift enum MeshAssemblyError."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/TensorBlobLoader.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/TensorBlobLoader.swift",
+      "line_start": 1,
+      "line_end": 156,
+      "symbol": "TensorBlobLoader.swift",
+      "summary": "Swift source file, 156 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/TensorBlobLoader.swift::TensorDataType@3",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/TensorBlobLoader.swift",
+      "line_start": 3,
+      "line_end": 16,
+      "symbol": "TensorDataType",
+      "summary": "Swift enum TensorDataType."
+    },
+    {
+      "id": "Sources/ShapERuntime/TensorBlobLoader.swift::RuntimeTensor@18",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/TensorBlobLoader.swift",
+      "line_start": 18,
+      "line_end": 117,
+      "symbol": "RuntimeTensor",
+      "summary": "Owned tensor blob with a name, shape, data type, and bytes."
+    },
+    {
+      "id": "Sources/ShapERuntime/TensorBlobLoader.swift::CodingKeys@24",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/TensorBlobLoader.swift",
+      "line_start": 24,
+      "line_end": 29,
+      "symbol": "CodingKeys",
+      "summary": "Swift enum CodingKeys."
+    },
+    {
+      "id": "Sources/ShapERuntime/TensorBlobLoader.swift::float32Values@65",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/TensorBlobLoader.swift",
+      "line_start": 65,
+      "line_end": 74,
+      "symbol": "float32Values",
+      "summary": "Swift func float32Values."
+    },
+    {
+      "id": "Sources/ShapERuntime/TensorBlobLoader.swift::int32Values@76",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/TensorBlobLoader.swift",
+      "line_start": 76,
+      "line_end": 85,
+      "symbol": "int32Values",
+      "summary": "Swift func int32Values."
+    },
+    {
+      "id": "Sources/ShapERuntime/TensorBlobLoader.swift::int64Values@87",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/TensorBlobLoader.swift",
+      "line_start": 87,
+      "line_end": 96,
+      "symbol": "int64Values",
+      "summary": "Swift func int64Values."
+    },
+    {
+      "id": "Sources/ShapERuntime/TensorBlobLoader.swift::TensorBlobLoader@130",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/TensorBlobLoader.swift",
+      "line_start": 130,
+      "line_end": 156,
+      "symbol": "TensorBlobLoader",
+      "summary": "Reads raw little-endian tensor blobs named by the manifest."
+    },
+    {
+      "id": "Sources/ShapERuntime/TensorBlobLoader.swift::loadTensor@131",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/TensorBlobLoader.swift",
+      "line_start": 131,
+      "line_end": 155,
+      "symbol": "loadTensor",
+      "summary": "Swift func loadTensor."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/Text300MArtifact.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Text300MArtifact.swift",
+      "line_start": 1,
+      "line_end": 97,
+      "symbol": "Text300MArtifact.swift",
+      "summary": "Swift source file, 97 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/Text300MArtifact.swift::TensorPath@4",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Text300MArtifact.swift",
+      "line_start": 4,
+      "line_end": 53,
+      "symbol": "TensorPath",
+      "summary": "Swift struct TensorPath."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/Text300MTransformer.swift",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
+      "line_start": 1,
+      "line_end": 652,
+      "symbol": "Text300MTransformer.swift",
+      "summary": "Swift source file, 652 lines."
+    },
+    {
+      "id": "Sources/ShapERuntime/Text300MTransformer.swift::Text300MTransformerError@7",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
+      "line_start": 7,
+      "line_end": 28,
+      "symbol": "Text300MTransformerError",
+      "summary": "Swift enum Text300MTransformerError."
+    },
+    {
+      "id": "Sources/ShapERuntime/Text300MTransformer.swift::TimestepEmbedding@63",
+      "kind": "enum",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
+      "line_start": 63,
+      "line_end": 89,
+      "symbol": "TimestepEmbedding",
+      "summary": "Swift enum TimestepEmbedding."
+    },
+    {
+      "id": "Sources/ShapERuntime/Text300MTransformer.swift::compute@69",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
+      "line_start": 69,
+      "line_end": 88,
+      "symbol": "compute",
+      "summary": "Swift func compute."
+    },
+    {
+      "id": "Sources/ShapERuntime/Text300MTransformer.swift::Text300MTransformer@93",
+      "kind": "class",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
+      "line_start": 93,
+      "line_end": 652,
+      "symbol": "Text300MTransformer",
+      "summary": "Text-conditioned diffusion transformer. predict takes [B, inputChannels, T] and returns [B, outputChannels, T]. Configuration is inferred from weight shapes. Convenience init defaults nHeads to 16."
+    },
+    {
+      "id": "Sources/ShapERuntime/Text300MTransformer.swift::Configuration@97",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
+      "line_start": 97,
+      "line_end": 132,
+      "symbol": "Configuration",
+      "summary": "Swift struct Configuration."
+    },
+    {
+      "id": "Sources/ShapERuntime/Text300MTransformer.swift::TransformerLayer@136",
+      "kind": "struct",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
+      "line_start": 136,
+      "line_end": 149,
+      "symbol": "TransformerLayer",
+      "summary": "Swift struct TransformerLayer."
+    },
+    {
+      "id": "Sources/ShapERuntime/Text300MTransformer.swift::inferConfiguration@308",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
+      "line_start": 308,
+      "line_end": 352,
+      "symbol": "inferConfiguration",
+      "summary": "Swift func inferConfiguration."
+    },
+    {
+      "id": "Sources/ShapERuntime/Text300MTransformer.swift::predict@363",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
+      "line_start": 363,
+      "line_end": 424,
+      "symbol": "predict",
+      "summary": "Swift func predict.",
+      "tensor_signature": {
+        "input_shape": "[B, inputChannels, T], timesteps [B], clip [B, clipFeatureDim]",
+        "output_shape": "[B, outputChannels, T]"
+      }
+    },
+    {
+      "id": "Sources/ShapERuntime/Text300MTransformer.swift::predictInternal@427",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
+      "line_start": 427,
+      "line_end": 456,
+      "symbol": "predictInternal",
+      "summary": "Swift func predictInternal."
+    },
+    {
+      "id": "file:Tests/ShapERuntimeTests/ClipBPELocationTests.swift",
+      "kind": "file",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/ClipBPELocationTests.swift",
+      "line_start": 1,
+      "line_end": 61,
+      "symbol": "ClipBPELocationTests.swift",
+      "summary": "Swift source file, 61 lines."
+    },
+    {
+      "id": "Tests/ShapERuntimeTests/ClipBPELocationTests.swift::ClipBPELocationTests@5",
+      "kind": "class",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/ClipBPELocationTests.swift",
+      "line_start": 5,
+      "line_end": 61,
+      "symbol": "ClipBPELocationTests",
+      "summary": "Swift class ClipBPELocationTests."
+    },
+    {
+      "id": "file:Tests/ShapERuntimeTests/ClipSimpleTokenizerTests.swift",
+      "kind": "file",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/ClipSimpleTokenizerTests.swift",
+      "line_start": 1,
+      "line_end": 91,
+      "symbol": "ClipSimpleTokenizerTests.swift",
+      "summary": "Swift source file, 91 lines."
+    },
+    {
+      "id": "Tests/ShapERuntimeTests/ClipSimpleTokenizerTests.swift::ClipSimpleTokenizerTests@4",
+      "kind": "class",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/ClipSimpleTokenizerTests.swift",
+      "line_start": 4,
+      "line_end": 91,
+      "symbol": "ClipSimpleTokenizerTests",
+      "summary": "Swift class ClipSimpleTokenizerTests."
+    },
+    {
+      "id": "file:Tests/ShapERuntimeTests/ClipTextEmbedderTests.swift",
+      "kind": "file",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/ClipTextEmbedderTests.swift",
+      "line_start": 1,
+      "line_end": 106,
+      "symbol": "ClipTextEmbedderTests.swift",
+      "summary": "Swift source file, 106 lines."
+    },
+    {
+      "id": "Tests/ShapERuntimeTests/ClipTextEmbedderTests.swift::ClipTextEmbedderTests@5",
+      "kind": "class",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/ClipTextEmbedderTests.swift",
+      "line_start": 5,
+      "line_end": 106,
+      "symbol": "ClipTextEmbedderTests",
+      "summary": "Swift class ClipTextEmbedderTests."
+    },
+    {
+      "id": "file:Tests/ShapERuntimeTests/DecoderParamsProjectorTests.swift",
+      "kind": "file",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/DecoderParamsProjectorTests.swift",
+      "line_start": 1,
+      "line_end": 206,
+      "symbol": "DecoderParamsProjectorTests.swift",
+      "summary": "Swift source file, 206 lines."
+    },
+    {
+      "id": "Tests/ShapERuntimeTests/DecoderParamsProjectorTests.swift::DecoderParamsProjectorTests@6",
+      "kind": "class",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/DecoderParamsProjectorTests.swift",
+      "line_start": 6,
+      "line_end": 206,
+      "symbol": "DecoderParamsProjectorTests",
+      "summary": "Swift class DecoderParamsProjectorTests."
+    },
+    {
+      "id": "file:Tests/ShapERuntimeTests/DiffusionStepTests.swift",
+      "kind": "file",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/DiffusionStepTests.swift",
+      "line_start": 1,
+      "line_end": 167,
+      "symbol": "DiffusionStepTests.swift",
+      "summary": "Swift source file, 167 lines."
+    },
+    {
+      "id": "Tests/ShapERuntimeTests/DiffusionStepTests.swift::DiffusionStepTests@6",
+      "kind": "class",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/DiffusionStepTests.swift",
+      "line_start": 6,
+      "line_end": 167,
+      "symbol": "DiffusionStepTests",
+      "summary": "Swift class DiffusionStepTests."
+    },
+    {
+      "id": "file:Tests/ShapERuntimeTests/ImageProcessorTests.swift",
+      "kind": "file",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/ImageProcessorTests.swift",
+      "line_start": 1,
+      "line_end": 115,
+      "symbol": "ImageProcessorTests.swift",
+      "summary": "Swift source file, 115 lines."
+    },
+    {
+      "id": "Tests/ShapERuntimeTests/ImageProcessorTests.swift::ImageProcessorTests@6",
+      "kind": "class",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/ImageProcessorTests.swift",
+      "line_start": 6,
+      "line_end": 115,
+      "symbol": "ImageProcessorTests",
+      "summary": "Swift class ImageProcessorTests."
+    },
+    {
+      "id": "file:Tests/ShapERuntimeTests/RuntimeArtifactBundleTests.swift",
+      "kind": "file",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/RuntimeArtifactBundleTests.swift",
+      "line_start": 1,
+      "line_end": 104,
+      "symbol": "RuntimeArtifactBundleTests.swift",
+      "summary": "Swift source file, 104 lines."
+    },
+    {
+      "id": "Tests/ShapERuntimeTests/RuntimeArtifactBundleTests.swift::RuntimeArtifactBundleTests@4",
+      "kind": "class",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/RuntimeArtifactBundleTests.swift",
+      "line_start": 4,
+      "line_end": 104,
+      "symbol": "RuntimeArtifactBundleTests",
+      "summary": "Swift class RuntimeArtifactBundleTests."
+    },
+    {
+      "id": "file:Tests/ShapERuntimeTests/RuntimeBundleFixture.swift",
+      "kind": "file",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/RuntimeBundleFixture.swift",
+      "line_start": 1,
+      "line_end": 25,
+      "symbol": "RuntimeBundleFixture.swift",
+      "summary": "Swift source file, 25 lines."
+    },
+    {
+      "id": "Tests/ShapERuntimeTests/RuntimeBundleFixture.swift::RuntimeBundleFixture@4",
+      "kind": "enum",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/RuntimeBundleFixture.swift",
+      "line_start": 4,
+      "line_end": 25,
+      "symbol": "RuntimeBundleFixture",
+      "summary": "Swift enum RuntimeBundleFixture."
+    },
+    {
+      "id": "file:Tests/ShapERuntimeTests/Text300MArtifactTests.swift",
+      "kind": "file",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/Text300MArtifactTests.swift",
+      "line_start": 1,
+      "line_end": 83,
+      "symbol": "Text300MArtifactTests.swift",
+      "summary": "Swift source file, 83 lines."
+    },
+    {
+      "id": "Tests/ShapERuntimeTests/Text300MArtifactTests.swift::Text300MArtifactTests@5",
+      "kind": "class",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/Text300MArtifactTests.swift",
+      "line_start": 5,
+      "line_end": 83,
+      "symbol": "Text300MArtifactTests",
+      "summary": "Swift class Text300MArtifactTests."
+    },
+    {
+      "id": "file:Tests/ShapERuntimeTests/Text300MTransformerTests.swift",
+      "kind": "file",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/Text300MTransformerTests.swift",
+      "line_start": 1,
+      "line_end": 223,
+      "symbol": "Text300MTransformerTests.swift",
+      "summary": "Swift source file, 223 lines."
+    },
+    {
+      "id": "Tests/ShapERuntimeTests/Text300MTransformerTests.swift::Text300MTransformerTests@6",
+      "kind": "class",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/Text300MTransformerTests.swift",
+      "line_start": 6,
+      "line_end": 223,
+      "symbol": "Text300MTransformerTests",
+      "summary": "Swift class Text300MTransformerTests."
+    },
+    {
+      "id": "file:Sources/ShapERuntime/MarchingCubes.metal",
+      "kind": "file",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/MarchingCubes.metal",
+      "line_start": 1,
+      "line_end": 175,
+      "symbol": "MarchingCubes.metal",
+      "summary": "Metal kernels countTriangles and extractMesh. Bundled via Package.swift resources."
+    }
+  ],
+  "edges": [
+    {
+      "from": "Sources/ShapERuntime/ShapERuntime.swift::generate@209",
+      "to": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift::embedText@116",
+      "kind": "calls"
+    },
+    {
+      "from": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift::embedText@116",
+      "to": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift::embedText@116",
+      "kind": "transforms_tensor",
+      "input_shape": "prompts [String]",
+      "output_shape": "[batch, textProjectionDim]"
+    },
+    {
+      "from": "Sources/ShapERuntime/Text300MTransformer.swift::predict@363",
+      "to": "Sources/ShapERuntime/Text300MTransformer.swift::predict@363",
+      "kind": "transforms_tensor",
+      "input_shape": "[B, inputChannels, T]",
+      "output_shape": "[B, outputChannels, T]"
+    },
+    {
+      "from": "Sources/ShapERuntime/ShapERuntime.swift::generate@401",
+      "to": "Sources/ShapERuntime/ImageProcessor.swift::processCLIPImage@26",
+      "kind": "calls"
+    },
+    {
+      "from": "Sources/ShapERuntime/ImageProcessor.swift::processCLIPImage@26",
+      "to": "Sources/ShapERuntime/ImageProcessor.swift::processCLIPImage@26",
+      "kind": "transforms_tensor",
+      "input_shape": "CGImage",
+      "output_shape": "[1, 224, 224, 3]"
+    },
+    {
+      "from": "Sources/ShapERuntime/DecoderParamsProjector.swift::project@175",
+      "to": "Sources/ShapERuntime/DecoderParamsProjector.swift::project@175",
+      "kind": "transforms_tensor",
+      "input_shape": "[B, D]",
+      "output_shape": "parameter dictionary"
+    },
+    {
+      "from": "Sources/ShapERuntime/MarchingCubes.swift::extract@24",
+      "to": "Sources/ShapERuntime/MarchingCubes.swift::extract@24",
+      "kind": "transforms_tensor",
+      "input_shape": "[X, Y, Z]",
+      "output_shape": "verts [V, 3], faces [F, 3]"
+    },
+    {
+      "from": "Sources/ShapERuntime/STFMeshRenderer.swift::extractMeshes@242",
+      "to": "Sources/ShapERuntime/MarchingCubes.swift::extract@24",
+      "kind": "calls"
+    },
+    {
+      "from": "Sources/ShapERuntime/MetalMarchingCubes.swift::MetalMarchingCubes@25",
+      "to": "Sources/ShapERuntime/MarchingCubes.swift::LookupTable@221",
+      "kind": "depends_on"
+    },
+    {
+      "from": "Sources/ShapERuntime/MarchingCubes.swift::LookupTable@221",
+      "to": "file:Sources/ShapERuntime/MCTable.swift",
+      "kind": "depends_on"
+    },
+    {
+      "from": "Sources/ShapECLI/main.swift::resolveBPE@212",
+      "to": "Sources/ShapERuntime/ClipBPELocation.swift::resolve@20",
+      "kind": "calls"
+    },
+    {
+      "from": "target:ShapECLI",
+      "to": "target:ShapERuntime",
+      "kind": "depends_on"
+    },
+    {
+      "from": "target:ShapERuntimeTests",
+      "to": "target:ShapERuntime",
+      "kind": "depends_on"
+    },
+    {
+      "from": "Tests/ShapERuntimeTests/ClipBPELocationTests.swift::ClipBPELocationTests@5",
+      "to": "Sources/ShapERuntime/ClipBPELocation.swift::ClipBPELocation@4",
+      "kind": "tested_by"
+    }
+  ]
+}

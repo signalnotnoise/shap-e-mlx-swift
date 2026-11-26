@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# Swift / Xcode
+.build/
+.swiftpm/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.metallib
+xcodebuild.log
+
+# Downloaded Shap-E weights. See README.md.
+runtime_bundle/

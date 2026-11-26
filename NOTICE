@@ -1,0 +1,52 @@
+shap-e-mlx-swift
+Copyright (c) 2026 Ismael Alex Otero
+Licensed under the MIT License; see LICENSE.
+
+The Swift sources in this repository were copied from
+https://github.com/signalnotnoise/apple-mlx-foundations
+tag v0.1.0, commit 018215715177943fe72cea8e540bc7b80dcb593f.
+That repository's license is also MIT, Copyright (c) 2026 signalnotnoise.
+A copy is in licenses/apple-mlx-foundations.txt.
+`shap_e/swift` is identical on that tag and on main of the source repository
+(main commit 3de822836cf7358125e028bf4d75818ed6dbaf7a at the time of the copy).
+The public history of that folder is a single snapshot commit, so this
+package is a clean copy rather than a rewritten git history.
+
+This project is an independent port. It is not affiliated with or endorsed
+by OpenAI or Apple.
+
+Third-party software and models this package builds on:
+
+1. Shap-E (OpenAI)
+   https://github.com/openai/shap-e
+   MIT License, Copyright (c) 2023 OpenAI.
+   See licenses/Shap-E.txt.
+   ShapERuntime is a Swift + MLX port of that model architecture.
+   The license text was copied from
+   https://huggingface.co/signalNotNoise/shap-e-mlx
+   revision d71f70a09b9c03535188d006a719edda5c19a6eb
+   path licenses/Shap-E.txt.
+
+2. CLIP (OpenAI)
+   https://github.com/openai/CLIP
+   MIT License, Copyright (c) 2021 OpenAI.
+   See licenses/CLIP.txt.
+   Shap-E conditions on CLIP embeddings. The tokenizer reads
+   bpe_simple_vocab_16e6.txt.gz from the CLIP project. That file is not
+   in this repository. It is included at the root of the Hugging Face
+   weight bundle. The license text was copied from the same pinned
+   revision, path licenses/CLIP.txt.
+
+3. MLX and mlx-swift (Apple)
+   https://github.com/ml-explore/mlx
+   https://github.com/ml-explore/mlx-swift
+   MIT License, Copyright (c) 2023 Apple Inc.
+   mlx-swift is a Swift Package Manager dependency. It is not vendored.
+
+Model weights:
+No pretrained model weights are included in this repository. Download them
+from https://huggingface.co/signalNotNoise/shap-e-mlx at the pinned
+revision in README.md and verify checksums.sha256 before use. The only
+tensors checked in are the tiny random-weight stub under
+Tests/ShapERuntimeTests/Fixtures/runtime_bundle_stub/, which contains no
+trained parameters.

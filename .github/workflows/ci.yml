@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  macos:
+    name: Build and test (macOS)
+    runs-on: macos-26
+    timeout-minutes: 90
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Test weight verification
+        run: python3 -m unittest scripts/test_fetch_weights.py
+
+      - name: Verify documentation anchors
+        run: python3 scripts/verify_docs.py
+
+      - name: Show toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Resolve packages and list schemes
+        run: |
+          xcodebuild -resolvePackageDependencies -skipPackagePluginValidation
+          xcodebuild -list
+
+      - name: Build and test
+        run: |
+          set -o pipefail
+          xcodebuild test \
+            -scheme ShapERuntime-Package \
+            -destination 'platform=macOS' \
+            -skipPackagePluginValidation \
+            -skipMacroValidation \
+            CODE_SIGNING_ALLOWED=NO \
+            | tee xcodebuild.log \
+            | xcbeautify

@@ -22,9 +22,9 @@
   is omitted. An explicit `--bpe` path is used when that file exists.
 - Added a macOS GitHub Actions workflow, `.spi.yml`, and
   `scripts/fetch_weights.py` for the pinned Hugging Face snapshot.
-- `--text-only` verification fails when a checksummed file inside the
-  text scope is missing. Missing files outside that scope are skipped.
-  A checksum list that omits a manifest tensor path also fails.
+- A checksum list that only names optional files such as README.md fails.
+  Required files are manifest.json, the BPE tokenizer, and the manifest
+  tensor paths for the chosen scope.
 - Added `AGENTS.md`, `docs/engineering_standards.md`, the knowledge graph,
   and `docs/wiki/` pages. `scripts/verify_docs.py` checks their line anchors
   against the working tree and does not require `verified_commit` to be an

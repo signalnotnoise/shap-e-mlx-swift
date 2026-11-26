@@ -101,4 +101,37 @@ final class RuntimeArtifactBundleTests: XCTestCase {
             XCTAssertTrue(available.contains("text300m"))
         }
     }
+
+    func testRejectsDirectoryThatOnlyHasAReadme() throws {
+        let root = FileManager.default.temporaryDirectory
+            .appendingPathComponent("shap-e-readme-only-\(UUID().uuidString)", isDirectory: true)
+        try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: root) }
+        try Data("readme".utf8).write(to: root.appendingPathComponent("README.md"))
+
+        XCTAssertThrowsError(try RuntimeArtifactBundle(bundleURL: root)) { error in
+            guard case RuntimeArtifactError.manifestNotFound = error else {
+                return XCTFail("Expected manifestNotFound, got \(error)")
+            }
+        }
+    }
+
+    func testValidateRequiredFilesRejectsMissingTokenizerAndWeight() throws {
+        let root = FileManager.default.temporaryDirectory
+            .appendingPathComponent("shap-e-required-\(UUID().uuidString)", isDirectory: true)
+        try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: root) }
+        let manifest = """
+        {"artifact_version":1,"families":{"clip_text":{"version":1,"metadata":{},"tensors":{"w":{"name":"w","path":"clip_text/w.bin","shape":[1],"dtype":"float32"}}}}}
+        """
+        try Data(manifest.utf8).write(to: root.appendingPathComponent("manifest.json"))
+        let bundle = try RuntimeArtifactBundle(bundleURL: root)
+
+        XCTAssertThrowsError(try RuntimeBundleRequirements.validate(bundle: bundle, textOnly: true)) { error in
+            guard case let RuntimeArtifactError.missingRequiredFile(name, _) = error else {
+                return XCTFail("Expected missingRequiredFile, got \(error)")
+            }
+            XCTAssertEqual(name, ClipBPELocation.fileName)
+        }
+    }
 }

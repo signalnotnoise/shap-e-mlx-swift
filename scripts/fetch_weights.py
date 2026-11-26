@@ -11,10 +11,12 @@ spaces, then a relative path. checksums.sha256 itself is not an entry.
 
 `--text-only` still requires every checksum entry in the text scope
 (root files, `licenses/*`, and the five text-family `*.bin` files).
-Missing entries outside that scope are skipped. A checksum list that
-omits a tensor path declared by manifest.json fails even when every
-listed file matches. The Swift unit tests use the checked-in stub and
-do not download this bundle.
+Missing entries outside that scope are skipped. Required files are
+manifest.json, the BPE tokenizer, and the tensor paths manifest.json
+lists for the chosen scope. That set is fixed in code plus the manifest.
+It is not whatever checksums.sha256 happens to name. A list that only
+covers optional files such as README.md fails. The Swift unit tests
+use the checked-in stub and do not download this bundle.
 """
 
 from __future__ import annotations
@@ -129,37 +131,60 @@ def manifest_tensor_paths(manifest_path: Path) -> list[str]:
     return paths
 
 
-def ensure_checksum_list_covers_manifest(bundle: Path, checksum_names: set[str]) -> None:
-    """Fail when checksums.sha256 omits a tensor path the manifest declares.
+REQUIRED_BUNDLE_FILES = (
+    "manifest.json",
+    "bpe_simple_vocab_16e6.txt.gz",
+)
 
-    A truncated list can still match every file it bothers to name. The
-    manifest is the list of blobs the runtime will open, so each of those
-    paths has to appear in the checksum list. This applies to text-only
-    verification as well: image paths may be absent from disk, but they
-    still have to be named when the manifest includes them.
+
+def required_bundle_paths(bundle: Path, *, text_only: bool) -> list[str]:
+    """Files that must exist and be named in checksums.sha256.
+
+    The set is the fixed root files plus tensor paths from manifest.json.
+    Text-only keeps paths in the text scope. It does not read the checksum
+    list to decide what is required.
     """
 
+    required = list(REQUIRED_BUNDLE_FILES)
     manifest_path = bundle / "manifest.json"
     if not manifest_path.is_file():
+        return required
+    for path in manifest_tensor_paths(manifest_path):
+        if text_only and not is_text_scope_path(path):
+            continue
+        if path not in required:
+            required.append(path)
+    return required
+
+
+def ensure_required_files_are_checksummed(
+    bundle: Path,
+    checksum_names: set[str],
+    *,
+    text_only: bool,
+) -> None:
+    """Fail unless every required path is on disk and listed in checksums.sha256."""
+
+    problems: list[str] = []
+    for name in required_bundle_paths(bundle, text_only=text_only):
+        if name not in checksum_names:
+            problems.append(f"{name} is not listed in checksums.sha256")
+        elif not (bundle / name).is_file():
+            problems.append(f"{name} is missing")
+    if not problems:
         return
-    missing = [
-        path for path in manifest_tensor_paths(manifest_path) if path not in checksum_names
-    ]
-    if not missing:
-        return
-    preview = ", ".join(missing[:8])
-    raise ValueError(
-        "checksums.sha256 is incomplete versus manifest.json: "
-        f"missing {len(missing)} tensor path(s): {preview}"
-    )
+    preview = "; ".join(problems[:8])
+    raise ValueError("required bundle files are absent or not checksummed: " + preview)
 
 
 def verify_checksums(bundle: Path, *, text_only: bool = False) -> int:
-    """Hash files listed in `checksums.sha256`.
+    """Hash files listed in `checksums.sha256`, then require the scope's files.
 
-    Full verification requires every listed file. Text-only verification
-    skips a missing file only when that path is outside the text scope.
-    A missing manifest, tokenizer, license, or text-family tensor fails.
+    Required paths come from REQUIRED_BUNDLE_FILES plus the manifest's tensor
+    paths for this scope. They must be present and named in the checksum list.
+    A list that only covers optional files such as README.md fails.
+    Text-only verification still skips a missing listed file outside the text
+    scope. A missing manifest, tokenizer, or in-scope weight fails.
     """
 
     checksum_path = bundle / "checksums.sha256"
@@ -189,7 +214,7 @@ def verify_checksums(bundle: Path, *, text_only: bool = False) -> int:
         verified += 1
     if verified == 0:
         raise ValueError("No downloaded files matched checksums.sha256")
-    ensure_checksum_list_covers_manifest(bundle, checksum_names)
+    ensure_required_files_are_checksummed(bundle, checksum_names, text_only=text_only)
     return verified
 
 

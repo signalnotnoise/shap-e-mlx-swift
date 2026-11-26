@@ -12,6 +12,7 @@ public enum RuntimeArtifactError: Error, Equatable, LocalizedError {
     case invalidTensorShape(name: String, shape: [Int])
     case invalidTensorByteCount(name: String, expected: Int, actual: Int)
     case tensorTypeMismatch(name: String, expected: TensorDataType, actual: TensorDataType)
+    case missingRequiredFile(name: String, url: URL)
 
     public var errorDescription: String? {
         switch self {
@@ -39,6 +40,8 @@ public enum RuntimeArtifactError: Error, Equatable, LocalizedError {
             return "Tensor '\(name)' has \(actual) bytes but expected \(expected)."
         case let .tensorTypeMismatch(name, expected, actual):
             return "Tensor '\(name)' expected \(expected.rawValue) values but stores \(actual.rawValue)."
+        case let .missingRequiredFile(name, url):
+            return "Required bundle file '\(name)' is missing at \(url.path)."
         }
     }
 }

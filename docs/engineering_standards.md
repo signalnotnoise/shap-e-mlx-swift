@@ -22,23 +22,23 @@ Shapes below are the ones named in source comments and checks.
 - SDF grids are `[X, Y, Z]` float32, already border-padded. Isosurface level is 0. Output verts are `[V, 3]`, faces `[F, 3]` int32 (`MarchingCubes.swift:18-23`).
 - `MeshResult.vertices` and `faces` are `RuntimeTensor` values (`RuntimeCoreTypes.swift:56-58`). OBJ export treats vertex floats as triples and face indexes as triples (`MeshExport.swift:26-27`).
 
-`n_ctx` and `d_latent` are integers in the `text300m` family metadata (`RuntimeArtifactBundle.swift:133-138`). Do not hardcode a production latent length in new call sites. The stub comparison table is `Tests/ShapERuntimeTests/Fixtures/README.md:28-35`.
+`n_ctx` and `d_latent` are integers in the `text300m` family metadata (`RuntimeArtifactBundle.swift:140-141`). Do not hardcode a production latent length in new call sites. The stub comparison table is `Tests/ShapERuntimeTests/Fixtures/README.md:28-35`.
 
 ## Weights and integrity
 
 No trained weights are committed. `.gitignore` ignores `runtime_bundle/`. The checked-in tensors are the random stub under `Tests/ShapERuntimeTests/Fixtures/runtime_bundle_stub/`.
 
-The download pin in `scripts/fetch_weights.py:29-30` is repo `signalNotNoise/shap-e-mlx`, revision `d71f70a09b9c03535188d006a719edda5c19a6eb`. `README.md:96` says Hub tag `v0.1.0` resolves to that commit and that one local run verified 1,102 checksummed files. This file does not restate a byte size beyond the fixture README's "5.143 GB" label (`Fixtures/README.md:30`).
+The download pin in `scripts/fetch_weights.py:31-32` is repo `signalNotNoise/shap-e-mlx`, revision `d71f70a09b9c03535188d006a719edda5c19a6eb`. `README.md:96` says Hub tag `v0.1.0` resolves to that commit and that one local run verified 1,102 checksummed files. This file does not restate a byte size beyond the fixture README's "5.143 GB" label (`Fixtures/README.md:30`).
 
-Checksum lines are 64 hex characters, two spaces, then a relative path (`fetch_weights.py:62-74`). `verify_checksums` (`fetch_weights.py:157-193`):
+Checksum lines are 64 hex characters, two spaces, then a relative path (`fetch_weights.py:64-76`). `verify_checksums` (`fetch_weights.py:180-218`):
 
 - Full verification fails if any listed file is missing or the digest mismatches.
-- `--text-only` skips a missing file only when `is_text_scope_path` is false (`fetch_weights.py:177`).
-- Text scope is `ROOT_FILES`, `licenses/*`, and `*.bin` under `clip_text`, `text300m`, `diffusion`, `decoder_params`, and `renderer` (`fetch_weights.py:32-59`).
-- Every tensor `path` in `manifest.json` must be named in `checksums.sha256`, including paths outside the text scope. A truncated checksum list fails even when every listed file matches (`fetch_weights.py:132-154`).
+- `--text-only` skips a missing file only when `is_text_scope_path` is false (`fetch_weights.py:202`).
+- Text scope is `ROOT_FILES`, `licenses/*`, and `*.bin` under `clip_text`, `text300m`, `diffusion`, `decoder_params`, and `renderer` (`fetch_weights.py:34-61`).
+- Required files are `manifest.json`, `bpe_simple_vocab_16e6.txt.gz`, and the tensor paths the manifest lists for the scope (`fetch_weights.py:140-177`). Text-only omits image-family paths. A checksum list that only names `README.md` fails.
 - A directory whose only matching payload is `README.md` must exit nonzero. `test_text_only_fails_when_only_readme_is_present` (`scripts/test_fetch_weights.py:48`) covers that case. `test_truncated_checksum_list_fails_against_manifest` (`scripts/test_fetch_weights.py:106`) covers a checksum list that omits a manifest tensor path.
 
-`RuntimeArtifactBundle` requires `manifest.json` and loads each family listed there (`RuntimeArtifactBundle.swift:45-113`). Blob bytes are raw tensors, not safetensors. Canonical names are the manifest tensor names plus the on-disk file each entry points at. This package does not duplicate a per-tensor byte size table.
+`RuntimeArtifactBundle` requires `manifest.json` and loads each family listed there (`RuntimeArtifactBundle.swift:49-116`). Blob bytes are raw tensors, not safetensors. Canonical names are the manifest tensor names plus the on-disk file each entry points at. This package does not duplicate a per-tensor byte size table.
 
 BPE search order when `--bpe` is omitted or that path is missing:
 

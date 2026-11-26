@@ -124,9 +124,93 @@ class TextOnlyVerificationTests(unittest.TestCase):
                         ["--verify-only", *flag, "--output", str(bundle)]
                     )
                 self.assertNotEqual(code, 0, flag)
-                self.assertIn("incomplete versus manifest.json", stderr.getvalue())
                 self.assertIn("clip_text/token_embedding.bin", stderr.getvalue())
+                self.assertIn("not listed in checksums.sha256", stderr.getvalue())
                 self.assertNotIn("Verified", stdout.getvalue())
+
+    def test_readme_only_checksum_fails_without_manifest_or_tokenizer(self) -> None:
+        readme = b"only-readme"
+        checksum = _line(readme, "README.md") + "\n"
+        with tempfile.TemporaryDirectory() as temporary:
+            bundle = Path(temporary)
+            (bundle / "README.md").write_bytes(readme)
+            (bundle / "checksums.sha256").write_text(checksum, encoding="utf-8")
+            for flag in ([], ["--text-only"]):
+                stdout = io.StringIO()
+                stderr = io.StringIO()
+                with redirect_stdout(stdout), redirect_stderr(stderr):
+                    code = fetch_weights.main(
+                        ["--verify-only", *flag, "--output", str(bundle)]
+                    )
+                message = stderr.getvalue()
+                self.assertNotEqual(code, 0, flag)
+                self.assertIn("manifest.json", message)
+                self.assertIn("bpe_simple_vocab_16e6.txt.gz", message)
+                self.assertIn("not listed in checksums.sha256", message)
+                self.assertNotIn("Verified", stdout.getvalue())
+
+    def test_missing_manifest_fails_even_when_other_files_match(self) -> None:
+        bpe = b"bpe-bytes"
+        checksum = _line(bpe, "bpe_simple_vocab_16e6.txt.gz") + "\n"
+        with tempfile.TemporaryDirectory() as temporary:
+            bundle = Path(temporary)
+            (bundle / "bpe_simple_vocab_16e6.txt.gz").write_bytes(bpe)
+            (bundle / "checksums.sha256").write_text(checksum, encoding="utf-8")
+            stdout = io.StringIO()
+            stderr = io.StringIO()
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                code = fetch_weights.main(["--verify-only", "--output", str(bundle)])
+            self.assertNotEqual(code, 0)
+            self.assertIn("manifest.json is not listed in checksums.sha256", stderr.getvalue())
+            self.assertNotIn("Verified", stdout.getvalue())
+
+    def test_missing_tokenizer_fails_when_manifest_and_weight_match(self) -> None:
+        manifest = _manifest("clip_text/token_embedding.bin")
+        tensor = b"tensor"
+        files = {
+            "manifest.json": manifest,
+            "clip_text/token_embedding.bin": tensor,
+        }
+        checksum = "".join(_line(payload, name) + "\n" for name, payload in files.items())
+        with tempfile.TemporaryDirectory() as temporary:
+            bundle = Path(temporary)
+            for name, payload in files.items():
+                path = bundle / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(payload)
+            (bundle / "checksums.sha256").write_text(checksum, encoding="utf-8")
+            stdout = io.StringIO()
+            stderr = io.StringIO()
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                code = fetch_weights.main(["--verify-only", "--text-only", "--output", str(bundle)])
+            self.assertNotEqual(code, 0)
+            self.assertIn(
+                "bpe_simple_vocab_16e6.txt.gz is not listed in checksums.sha256",
+                stderr.getvalue(),
+            )
+            self.assertNotIn("Verified", stdout.getvalue())
+
+    def test_missing_manifest_listed_weight_file_fails(self) -> None:
+        manifest = _manifest("clip_text/token_embedding.bin")
+        bpe = b"bpe"
+        files = {
+            "manifest.json": manifest,
+            "bpe_simple_vocab_16e6.txt.gz": bpe,
+        }
+        lines = [_line(payload, name) for name, payload in files.items()]
+        lines.append(f"{'ab' * 32}  clip_text/token_embedding.bin")
+        with tempfile.TemporaryDirectory() as temporary:
+            bundle = Path(temporary)
+            for name, payload in files.items():
+                (bundle / name).write_bytes(payload)
+            (bundle / "checksums.sha256").write_text("\n".join(lines) + "\n", encoding="utf-8")
+            stdout = io.StringIO()
+            stderr = io.StringIO()
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                code = fetch_weights.main(["--verify-only", "--output", str(bundle)])
+            self.assertNotEqual(code, 0)
+            self.assertIn("clip_text/token_embedding.bin", stderr.getvalue())
+            self.assertNotIn("Verified", stdout.getvalue())
 
 
 if __name__ == "__main__":

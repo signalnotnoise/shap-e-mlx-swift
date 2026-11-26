@@ -29,7 +29,7 @@ Tensor shapes that the code states:
 - Decoder projection input: latent `[B, D]` (`DecoderParamsProjector.swift:174-175`).
 - Marching cubes: SDF `[X, Y, Z]` to verts `[V, 3]` and faces `[F, 3]` (`MarchingCubes.swift:18-23`).
 
-`nCtx` and `dLatent` are manifest metadata (`RuntimeArtifactBundle.swift:133-138`). This repository does not hardcode the production latent width. The stub fixture README compares a real bundle (width 1024, 24 layers, 16 heads, 1024 timesteps) with the checked-in stub (`Tests/ShapERuntimeTests/Fixtures/README.md:28-35`). Those real-bundle numbers are not constants in the transformer. `Text300MTransformer`'s convenience init defaults `nHeads` to 16 and infers the other fields from weight shapes (`Text300MTransformer.swift:180-185`).
+`nCtx` and `dLatent` are manifest metadata (`RuntimeArtifactBundle.swift:140-141`). This repository does not hardcode the production latent width. The stub fixture README compares a real bundle (width 1024, 24 layers, 16 heads, 1024 timesteps) with the checked-in stub (`Tests/ShapERuntimeTests/Fixtures/README.md:28-35`). Those real-bundle numbers are not constants in the transformer. `Text300MTransformer`'s convenience init defaults `nHeads` to 16 and infers the other fields from weight shapes (`Text300MTransformer.swift:180-185`).
 
 ## Out of scope
 

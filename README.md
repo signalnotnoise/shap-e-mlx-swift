@@ -44,12 +44,11 @@ let faces = try mesh.facesArray()       // [Int32], length F * 3
 
 `generate(prompt:)` returns one `ShapEMeshResult`. The `batchSize` overload returns `[ShapEMeshResult]`. `generate(image:)` takes a `CGImage` or an `MLXArray` and returns `[ShapEMeshResult]`. Text weights load in `init`. Image weights (`clip_vision` and `image300m`) load on the first image call.
 
-`ShapECLI` is a separate executable for local parity dumps and a CPU-versus-Metal mesh comparison. Pass the bundle and the BPE file explicitly:
+`ShapECLI` is a separate executable for local parity dumps and a CPU-versus-Metal mesh comparison. When `--bpe` is omitted, it uses `bpe_simple_vocab_16e6.txt.gz` in the bundle directory, next to `manifest.json`. Pass `--bpe` to choose a different file. That path wins when the file exists.
 
 ```bash
 ShapECLI --ab-mesh \
   --bundle runtime_bundle \
-  --bpe runtime_bundle/bpe_simple_vocab_16e6.txt.gz \
   --prompt "a red chair"
 ```
 
@@ -82,7 +81,7 @@ python3 scripts/fetch_weights.py --verify-only --output runtime_bundle
 | iOS 17+ | yes | no |
 | visionOS 1+ | yes | no |
 
-The macOS job does not download weights. Unit tests use `Tests/ShapERuntimeTests/Fixtures/runtime_bundle_stub/`, a small random-weight fixture with no trained parameters. Three CLIP tokenizer parity tests throw `XCTSkip` unless `bpe_simple_vocab_16e6.txt.gz` is available via `SHAP_E_BPE`, `SHAP_E_BUNDLE`, or `runtime_bundle/bpe_simple_vocab_16e6.txt.gz`. No test in this package loads the full weight bundle. Linux cannot build the MLX Metal shaders, so there is no Linux job.
+The macOS job does not download weights. Unit tests use `Tests/ShapERuntimeTests/Fixtures/runtime_bundle_stub/`, a small random-weight fixture with no trained parameters. Three CLIP tokenizer parity tests throw `XCTSkip` unless `bpe_simple_vocab_16e6.txt.gz` is available via `SHAP_E_BPE`, `SHAP_E_BUNDLE`, or `runtime_bundle/bpe_simple_vocab_16e6.txt.gz`. `ClipBPELocationTests` checks the omitted `--bpe` fallback with a temporary file and does not read the weight bundle. No test in this package loads the full weight bundle. Linux cannot build the MLX Metal shaders, so there is no Linux job.
 
 ## Limitations
 
@@ -99,4 +98,4 @@ The Swift sources are a port of [Shap-E](https://github.com/openai/shap-e) (MIT,
 
 ## Provenance
 
-Copied from [`shap_e/swift`](https://github.com/signalnotnoise/apple-mlx-foundations/tree/v0.1.0/shap_e/swift) in [apple-mlx-foundations](https://github.com/signalnotnoise/apple-mlx-foundations) tag `v0.1.0`, commit `018215715177943fe72cea8e540bc7b80dcb593f`. That directory matches `main` of the source repository. Its public history is one snapshot commit (author Alex Otero, 2026-11-17), so this package is a clean copy rather than a `git filter-repo` extraction. Two test paths were updated for the new layout: the non-SwiftPM fixture fallback, and the CLIP vocabulary lookup, which now skips when the weight bundle is absent instead of searching a monorepo virtualenv that does not exist here.
+Copied from [`shap_e/swift`](https://github.com/signalnotnoise/apple-mlx-foundations/tree/v0.1.0/shap_e/swift) in [apple-mlx-foundations](https://github.com/signalnotnoise/apple-mlx-foundations) tag `v0.1.0`, commit `018215715177943fe72cea8e540bc7b80dcb593f`. That directory matches `main` of the source repository. Its public history is one snapshot commit (author Alex Otero, 2026-11-17), so this package is a clean copy rather than a `git filter-repo` extraction. Two test paths were updated for the new layout: the non-SwiftPM fixture fallback, and the CLIP vocabulary lookup, which now skips when the weight bundle is absent instead of searching a monorepo virtualenv that does not exist here. `ShapECLI` also gained a fallback to `<bundle>/bpe_simple_vocab_16e6.txt.gz` when `--bpe` is omitted. That fallback was not in the source tree.

@@ -209,10 +209,9 @@ func resolveBundle(cli: String?) -> URL? {
     }
 }
 
-func resolveBPE(cli: String?) -> URL? {
-    if let cli {
-        let u = URL(fileURLWithPath: cli)
-        if FileManager.default.fileExists(atPath: u.path) { return u }
+func resolveBPE(cli: String?, bundleURL: URL?) -> URL? {
+    if let resolved = ClipBPELocation.resolve(cliPath: cli, bundleURL: bundleURL) {
+        return resolved
     }
     let root = resolveRepoRoot()
     let candidates = [
@@ -672,6 +671,7 @@ func parseArgs() -> Args {
                 Shared:
                   --bundle PATH         runtime_bundle directory
                   --bpe PATH            CLIP BPE vocab .txt.gz
+                                        Default: <bundle>/bpe_simple_vocab_16e6.txt.gz
 
                 Parity:
                   --parity-dir PATH     Output directory (default shap_e/parity)
@@ -732,8 +732,11 @@ do {
         exit(0)
     }
 
-    guard let bpe = resolveBPE(cli: args.bpe) else {
-        fputs("CLIP BPE not found. Pass --bpe PATH to bpe_simple_vocab_16e6.txt.gz\n", stderr)
+    guard let bpe = resolveBPE(cli: args.bpe, bundleURL: bundle) else {
+        fputs(
+            "CLIP BPE not found. Pass --bpe PATH, or place bpe_simple_vocab_16e6.txt.gz in the bundle directory.\n",
+            stderr
+        )
         exit(1)
     }
 

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Package copyright line is Copyright (c) 2026 Ismael Alex Otero (signalnotnoise).
 - Initial standalone package. `ShapERuntime` and `ShapECLI` are copied from
   `shap_e/swift` in
   [apple-mlx-foundations](https://github.com/signalnotnoise/apple-mlx-foundations)

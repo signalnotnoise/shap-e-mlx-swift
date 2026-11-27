@@ -1,10 +1,10 @@
 {
   "metadata": {
     "repo": "signalnotnoise/shap-e-mlx-swift",
-    "branch": "cursor/shap-e-runtime-package-ea5b",
-    "verified_commit": "9d042666fbfbd40b07417cd23dfe34d0731d673f",
-    "verified_commit_note": "The checker does not use git history. It does not require verified_commit to equal HEAD or to be an ancestor of HEAD. Every cited line is checked against the working tree, including a source token named after the citation when the sentence has one.",
-    "generated_at": "2026-11-26T16:00:00Z",
+    "branch": "main",
+    "verified_commit": "7ed124d1a9b408a84d3b96f0df66c53dd48b3de6",
+    "verified_commit_note": "verified_commit is 7ed124d, which expanded ShapEMeshResult accessors and shifted later ShapERuntime.swift line ranges. This docs commit is a follow-up that retargets those anchors. The checker does not use git history. It does not require verified_commit to equal HEAD or to be an ancestor of HEAD. Every cited line is checked against the working tree, including a source token named after the citation when the sentence has one.",
+    "generated_at": "2026-11-27T18:20:00Z",
     "swift_tools_version": "6.2",
     "mlx_swift_constraint": "\"0.31.3\"..<\"0.31.5\"; Package.resolved pins 0.31.3 (revision 61b9e011e09a62b489f6bd647958f1555bdf2896). Capped below 0.31.5 because 0.31.5+ requires swift-tools-version 6.3."
   },
@@ -175,6 +175,12 @@
         "line_start": 17,
         "line_end": 20,
         "symbol": "ShapERuntime-Package"
+      },
+      {
+        "file_path": "Tests/ShapERuntimeTests/ShapEMeshResultArrayTests.swift",
+        "line_start": 5,
+        "line_end": 38,
+        "symbol": "ShapEMeshResultArrayTests"
       }
     ],
     "ci_and_manifest": [
@@ -1871,9 +1877,9 @@
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
       "line_start": 1,
-      "line_end": 594,
+      "line_end": 612,
       "symbol": "ShapERuntime.swift",
-      "summary": "Swift source file, 594 lines."
+      "summary": "Swift source file, 612 lines."
     },
     {
       "id": "Sources/ShapERuntime/ShapERuntime.swift::ShapEMeshResult@9",
@@ -1881,7 +1887,7 @@
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
       "line_start": 9,
-      "line_end": 45,
+      "line_end": 63,
       "symbol": "ShapEMeshResult",
       "summary": "Public mesh result. verticesArray is [Float] length V*3. facesArray is [Int32] length F*3."
     },
@@ -1916,62 +1922,62 @@
       "summary": "Swift func mlxTextureChannel."
     },
     {
-      "id": "Sources/ShapERuntime/ShapERuntime.swift::verticesArray@29",
-      "kind": "func",
-      "target": "ShapERuntime",
-      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 29,
-      "line_end": 31,
-      "symbol": "verticesArray",
-      "summary": "Swift func verticesArray."
-    },
-    {
-      "id": "Sources/ShapERuntime/ShapERuntime.swift::facesArray@34",
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::verticesArray@34",
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
       "line_start": 34,
       "line_end": 36,
+      "symbol": "verticesArray",
+      "summary": "Swift func verticesArray."
+    },
+    {
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::facesArray@40",
+      "kind": "func",
+      "target": "ShapERuntime",
+      "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
+      "line_start": 40,
+      "line_end": 55,
       "symbol": "facesArray",
       "summary": "Swift func facesArray."
     },
     {
-      "id": "Sources/ShapERuntime/ShapERuntime.swift::colorsArray@39",
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::colorsArray@59",
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 39,
-      "line_end": 44,
+      "line_start": 59,
+      "line_end": 62,
       "symbol": "colorsArray",
       "summary": "Swift func colorsArray."
     },
     {
-      "id": "Sources/ShapERuntime/ShapERuntime.swift::ShapERuntimeError@47",
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::ShapERuntimeError@65",
       "kind": "enum",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 47,
-      "line_end": 64,
+      "line_start": 65,
+      "line_end": 82,
       "symbol": "ShapERuntimeError",
       "summary": "Swift enum ShapERuntimeError."
     },
     {
-      "id": "Sources/ShapERuntime/ShapERuntime.swift::ShapERuntime@68",
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::ShapERuntime@86",
       "kind": "class",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 68,
-      "line_end": 583,
+      "line_start": 86,
+      "line_end": 601,
       "symbol": "ShapERuntime",
       "summary": "End-to-end text and image mesh runtime. Loads the bundle, CLIP text, Text300M, the Karras denoiser, the decoder projector, and the STF renderer. Image weights load on the first image call."
     },
     {
-      "id": "Sources/ShapERuntime/ShapERuntime.swift::generate@209",
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::generate@227",
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 209,
-      "line_end": 237,
+      "line_start": 227,
+      "line_end": 255,
       "symbol": "generate",
       "summary": "Swift func generate.",
       "tensor_signature": {
@@ -1980,12 +1986,12 @@
       }
     },
     {
-      "id": "Sources/ShapERuntime/ShapERuntime.swift::generate@248",
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::generate@266",
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 248,
-      "line_end": 397,
+      "line_start": 266,
+      "line_end": 415,
       "symbol": "generate",
       "summary": "Swift func generate.",
       "tensor_signature": {
@@ -1994,12 +2000,12 @@
       }
     },
     {
-      "id": "Sources/ShapERuntime/ShapERuntime.swift::generate@401",
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::generate@419",
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 401,
-      "line_end": 430,
+      "line_start": 419,
+      "line_end": 448,
       "symbol": "generate",
       "summary": "Swift func generate.",
       "tensor_signature": {
@@ -2008,12 +2014,12 @@
       }
     },
     {
-      "id": "Sources/ShapERuntime/ShapERuntime.swift::generate@436",
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::generate@454",
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 436,
-      "line_end": 582,
+      "line_start": 454,
+      "line_end": 600,
       "symbol": "generate",
       "summary": "Swift func generate.",
       "tensor_signature": {
@@ -2022,12 +2028,12 @@
       }
     },
     {
-      "id": "Sources/ShapERuntime/ShapERuntime.swift::MeshAssemblyError@585",
+      "id": "Sources/ShapERuntime/ShapERuntime.swift::MeshAssemblyError@603",
       "kind": "enum",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 585,
-      "line_end": 594,
+      "line_start": 603,
+      "line_end": 612,
       "symbol": "MeshAssemblyError",
       "summary": "Swift enum MeshAssemblyError."
     },
@@ -2406,6 +2412,26 @@
       "summary": "Swift enum RuntimeBundleFixture."
     },
     {
+      "id": "file:Tests/ShapERuntimeTests/ShapEMeshResultArrayTests.swift",
+      "kind": "file",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/ShapEMeshResultArrayTests.swift",
+      "line_start": 1,
+      "line_end": 38,
+      "symbol": "ShapEMeshResultArrayTests.swift",
+      "summary": "Swift source file, 38 lines. Round-trips mesh scalar accessors and proves out-of-range Int64 faces throw."
+    },
+    {
+      "id": "Tests/ShapERuntimeTests/ShapEMeshResultArrayTests.swift::ShapEMeshResultArrayTests@5",
+      "kind": "class",
+      "target": "ShapERuntimeTests",
+      "file_path": "Tests/ShapERuntimeTests/ShapEMeshResultArrayTests.swift",
+      "line_start": 5,
+      "line_end": 38,
+      "symbol": "ShapEMeshResultArrayTests",
+      "summary": "Swift class ShapEMeshResultArrayTests."
+    },
+    {
       "id": "file:Tests/ShapERuntimeTests/Text300MArtifactTests.swift",
       "kind": "file",
       "target": "ShapERuntimeTests",
@@ -2458,7 +2484,7 @@
   ],
   "edges": [
     {
-      "from": "Sources/ShapERuntime/ShapERuntime.swift::generate@209",
+      "from": "Sources/ShapERuntime/ShapERuntime.swift::generate@227",
       "to": "Sources/ShapERuntime/Models/embeddings/ClipTextEmbedder.swift::embedText@116",
       "kind": "calls"
     },
@@ -2477,7 +2503,7 @@
       "output_shape": "[B, outputChannels, T]"
     },
     {
-      "from": "Sources/ShapERuntime/ShapERuntime.swift::generate@401",
+      "from": "Sources/ShapERuntime/ShapERuntime.swift::generate@419",
       "to": "Sources/ShapERuntime/ImageProcessor.swift::processCLIPImage@26",
       "kind": "calls"
     },

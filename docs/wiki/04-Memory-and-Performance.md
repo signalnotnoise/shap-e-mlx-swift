@@ -14,11 +14,11 @@
 
 ## Batching
 
-`generate` defaults `queryBatchSize` to 65536 and `gridSize` to 128 (`ShapERuntime.swift:255-256`). `STFMeshRenderer.extractMeshes` uses the same query-batch default (`STFMeshRenderer.swift:244-253`) and rejects a grid smaller than 2.
+`generate` defaults `queryBatchSize` to 65536 and `gridSize` to 128 (`ShapERuntime.swift:273-274`). `STFMeshRenderer.extractMeshes` uses the same query-batch default (`STFMeshRenderer.swift:244-253`) and rejects a grid smaller than 2.
 
-The single-prompt `generate` always uses CPU marching cubes (`ShapERuntime.swift:229`). Metal is available on the batch overload (`ShapERuntime.swift:258`) and on `ShapECLI --ab-mesh`.
+The single-prompt `generate` always uses CPU marching cubes (`ShapERuntime.swift:247`). Metal is available on the batch overload (`ShapERuntime.swift:276`) and on `ShapECLI --ab-mesh`.
 
-Partial previews inside the batch sampler also force CPU marching cubes. The comment is `ShapERuntime.swift:304`.
+Partial previews inside the batch sampler also force CPU marching cubes. The comment is `ShapERuntime.swift:322`.
 
 ## M3 Max red chair
 

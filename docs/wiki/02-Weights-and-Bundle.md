@@ -37,6 +37,6 @@ Text scope (`fetch_weights.py:34-61`):
 
 `ShapECLI.resolveBPE` calls that first, then `.mlx_venv` site-packages paths and `./bpe_simple_vocab_16e6.txt.gz` (`main.swift:212-233`).
 
-`ShapERuntime.init` does not search. The caller passes `bpeVocabularyURL` (`ShapERuntime.swift:104`).
+`ShapERuntime.init` does not search. The caller passes `bpeVocabularyURL` (`ShapERuntime.swift:122`).
 
 Tests look for `SHAP_E_BPE`, then `SHAP_E_BUNDLE/bpe_simple_vocab_16e6.txt.gz`, then `runtime_bundle/bpe_simple_vocab_16e6.txt.gz` (`ClipSimpleTokenizerTests.swift:11-29`). Without one of those, three tokenizer tests `XCTSkip`.

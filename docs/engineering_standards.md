@@ -57,7 +57,7 @@ The M3 Max mesh counts in `README.md:109` are a recorded local A/B, not a unit-t
 
 `ShapECLI` sets `Memory.cacheLimit` to `512 * 1024 * 1024` for the parity dump (`main.swift:266`) and to `768 * 1024 * 1024` for `--ab-mesh` (`main.swift:441`) and image parity (`ImageParity.swift:97`).
 
-Volume queries default to `queryBatchSize` 65536 (`ShapERuntime.swift:256`, `STFMeshRenderer.swift:244`). `generate(prompt:)` without `batchSize` uses CPU marching cubes (`ShapERuntime.swift:229`). The batch overload and the CLI can pass `useMetalMarchingCubes: true`.
+Volume queries default to `queryBatchSize` 65536 (`ShapERuntime.swift:274`, `STFMeshRenderer.swift:244`). `generate(prompt:)` without `batchSize` uses CPU marching cubes (`ShapERuntime.swift:247`). The batch overload and the CLI can pass `useMetalMarchingCubes: true`.
 
 Metal kernels are `countTriangles` and `extractMesh` (`MetalMarchingCubes.swift:49-51`). The library is `Bundle.module` (`MetalMarchingCubes.swift:46`). Both backends read `LookupTable.shared`, which is built from `MC_TABLE` (`MarchingCubes.swift:243`, `MetalMarchingCubes.swift:58`).
 

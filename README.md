@@ -10,12 +10,12 @@ Shaded preview of the Metal mesh from the run in [Tested on](#tested-on). The OB
 
 ## Install
 
-This repository has no version tag yet, so the snippet tracks `main`.
+This package is tagged v0.1.0, so the snippet uses that version.
 
 ```swift
 // Package.swift
 dependencies: [
-    .package(url: "https://github.com/signalnotnoise/shap-e-mlx-swift.git", branch: "main"),
+    .package(url: "https://github.com/signalnotnoise/shap-e-mlx-swift.git", from: "0.1.0"),
 ],
 targets: [
     .target(
@@ -115,7 +115,7 @@ The picture at the top is a 768 by 768 shaded render of that Metal OBJ. The file
 - Mesh generation quality, Torch parity, and CPU-versus-Metal mesh checks need the downloaded weights. They are not part of the unit tests or CI. `ShapECLI --parity` and `--image-parity` also expect reference files (for example `case.json` and `python_*.npy`) that are not in this repository.
 - The stub fixture has no `clip_vision` or `image300m` tensors, so it cannot exercise image generation.
 - iOS and visionOS are declared and are not built here. `.spi.yml` asks the Swift Package Index to build those Apple platforms and to generate documentation for `ShapERuntime`. This CI workflow does not generate documentation, and there is no checked-in DocC catalog.
-- There is no semver tag. Swift Package Index listing also requires a public repository. Visibility of this repository is left as it is.
+- The package is tagged v0.1.0. The repository is public, which Swift Package Index listing also requires.
 
 ## Attribution
 

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Install docs use `.package(..., from: "0.1.0")`. The package is tagged v0.1.0.
 - Package copyright line is Copyright (c) 2026 Ismael Alex Otero. signalnotnoise is credited as the project maintainer in the README.
 - Initial standalone package. `ShapERuntime` and `ShapECLI` are copied from
   `shap_e/swift` in

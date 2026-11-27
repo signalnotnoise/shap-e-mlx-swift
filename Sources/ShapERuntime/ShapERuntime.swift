@@ -25,22 +25,40 @@ public struct ShapEMeshResult: Sendable {
         try meshResult.vertexChannels?[name]?.asMLX().asType(Float.self)
     }
 
-    /// Extract standard Swift sequence type for vertices `[V, 3]`. Implicitly evaluates the tensor locally.
+    /// Extract standard Swift sequence type for vertices `[V, 3]`.
+    ///
+    /// Reads the tensor's bytes directly instead of round-tripping through
+    /// `MLXArray.asArray`, whose contiguous-copy precondition can trap
+    /// (SIGTRAP, not a thrown error) on tensors whose physical layout does
+    /// not match their logical size — seen on partial-extract meshes.
     public func verticesArray() throws -> [Float] {
-        try mlxVertices().asArray(Float.self)
+        try meshResult.vertices.float32Values()
     }
 
-    /// Extract standard Swift sequence type for geometry triangle faces `[F, 3]`. Implicitly evaluates.
+    /// Extract standard Swift sequence type for geometry triangle faces `[F, 3]`.
+    /// Int64 faces are range-checked per index instead of trapping.
     public func facesArray() throws -> [Int32] {
-        try mlxFaces().asArray(Int32.self)
+        switch meshResult.faces.dataType {
+        case .int32:
+            return try meshResult.faces.int32Values()
+        case .int64:
+            return try meshResult.faces.int64Values().map { value in
+                guard let converted = Int32(exactly: value) else {
+                    throw RuntimeArtifactError.tensorTypeMismatch(
+                        name: meshResult.faces.name, expected: .int32, actual: .int64)
+                }
+                return converted
+            }
+        case .float32:
+            throw RuntimeArtifactError.tensorTypeMismatch(
+                name: meshResult.faces.name, expected: .int32, actual: .float32)
+        }
     }
-    
+
     /// Extract standard Swift sequence type for vertex RGBA colors `[V, 4]`.
     public func colorsArray() throws -> [Float]? {
-        guard let rgba = try mlxTextureChannel("RGBA") else {
-            return nil
-        }
-        return rgba.asArray(Float.self)
+        guard let rgba = meshResult.vertexChannels?["RGBA"] else { return nil }
+        return try rgba.float32Values()
     }
 }
 

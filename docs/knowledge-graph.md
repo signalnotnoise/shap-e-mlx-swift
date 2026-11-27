@@ -1,6 +1,6 @@
 # Knowledge graph
 
-Verified source commit: `9d042666fbfbd40b07417cd23dfe34d0731d673f` on `cursor/shap-e-runtime-package-ea5b`.
+Verified source commit: `7ed124d1a9b408a84d3b96f0df66c53dd48b3de6` on `main`.
 
 That SHA is the commit recorded when the graph was measured. `scripts/verify_docs.py` does not ask git whether this commit is an ancestor of `HEAD`. It checks the cited lines in the working tree.
 
@@ -41,7 +41,7 @@ flowchart TD
 | Mesh export | `Sources/ShapERuntime/MeshExport.swift:19-70`, `Sources/ShapERuntime/MeshTopology.swift:22-112` |
 | CLI and A/B mesh | `Sources/ShapECLI/main.swift:418-593`, `Sources/ShapECLI/main.swift:212-234` |
 | Weights fetch and verify | `scripts/fetch_weights.py:34-61`, `scripts/fetch_weights.py:180-218` |
-| Tests | `Tests/ShapERuntimeTests/RuntimeBundleFixture.swift:3-25`, `run_tests.sh:17-20` |
+| Tests | `Tests/ShapERuntimeTests/RuntimeBundleFixture.swift:3-25`, `Tests/ShapERuntimeTests/ShapEMeshResultArrayTests.swift:5-38`, `run_tests.sh:17-20` |
 | CI and manifest | `Package.swift:1-22`, `.github/workflows/ci.yml:36-48`, `Package.resolved:4-11` |
 
 More detail: [wiki/01-Architecture-and-Dataflow.md](wiki/01-Architecture-and-Dataflow.md), [wiki/02-Weights-and-Bundle.md](wiki/02-Weights-and-Bundle.md), [wiki/03-Build-CI-and-Testing.md](wiki/03-Build-CI-and-Testing.md), [wiki/04-Memory-and-Performance.md](wiki/04-Memory-and-Performance.md).

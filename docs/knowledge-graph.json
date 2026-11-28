@@ -6,19 +6,20 @@
     "verified_commit_note": "verified_commit is 7ed124d, which expanded ShapEMeshResult accessors and shifted later ShapERuntime.swift line ranges. This docs commit is a follow-up that retargets those anchors. The checker does not use git history. It does not require verified_commit to equal HEAD or to be an ancestor of HEAD. Every cited line is checked against the working tree, including a source token named after the citation when the sentence has one.",
     "generated_at": "2026-11-27T18:20:00Z",
     "swift_tools_version": "6.2",
-    "mlx_swift_constraint": "\"0.31.3\"..<\"0.31.5\"; Package.resolved pins 0.31.3 (revision 61b9e011e09a62b489f6bd647958f1555bdf2896). Capped below 0.31.5 because 0.31.5+ requires swift-tools-version 6.3."
+    "mlx_swift_constraint": "\"0.31.3\"..<\"0.31.5\"; Package.resolved pins 0.31.3 (revision 61b9e011e09a62b489f6bd647958f1555bdf2896). Capped below 0.31.5 because 0.31.5+ requires swift-tools-version 6.3.",
+    "content_hash_note": "content_hashes are SHA-256 of markdown line-range citations, joined by newlines with a trailing newline. Swift symbol citations and knowledge-graph symbol nodes are not hashed."
   },
   "location_index": {
     "tokenizer": [
       {
         "file_path": "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift",
-        "line_start": 28,
+        "line_start": 29,
         "line_end": 358,
         "symbol": "ClipSimpleTokenizer"
       },
       {
         "file_path": "Sources/ShapERuntime/ClipBPELocation.swift",
-        "line_start": 4,
+        "line_start": 3,
         "line_end": 35,
         "symbol": "ClipBPELocation"
       },
@@ -38,7 +39,7 @@
       },
       {
         "file_path": "Sources/ShapERuntime/Models/embeddings/ClipTextArtifact.swift",
-        "line_start": 1,
+        "line_start": 3,
         "line_end": 23,
         "symbol": "ClipTextArtifact"
       }
@@ -46,19 +47,19 @@
     "diffusion_sampling": [
       {
         "file_path": "Sources/ShapERuntime/KarrasSampler.swift",
-        "line_start": 315,
+        "line_start": 316,
         "line_end": 656,
         "symbol": "KarrasSampler"
       },
       {
         "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
-        "line_start": 363,
+        "line_start": 356,
         "line_end": 424,
         "symbol": "predict"
       },
       {
         "file_path": "Sources/ShapERuntime/DiffusionStep.swift",
-        "line_start": 35,
+        "line_start": 36,
         "line_end": 225,
         "symbol": "DiffusionStep"
       }
@@ -66,13 +67,13 @@
     "latent_decoding": [
       {
         "file_path": "Sources/ShapERuntime/DecoderParamsProjector.swift",
-        "line_start": 175,
+        "line_start": 174,
         "line_end": 249,
         "symbol": "project"
       },
       {
         "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
-        "line_start": 354,
+        "line_start": 351,
         "line_end": 406,
         "symbol": "nerstfForward"
       }
@@ -80,7 +81,7 @@
     "marching_cubes_metal_cpu": [
       {
         "file_path": "Sources/ShapERuntime/MarchingCubes.swift",
-        "line_start": 24,
+        "line_start": 18,
         "line_end": 125,
         "symbol": "extract"
       },
@@ -92,7 +93,7 @@
       },
       {
         "file_path": "Sources/ShapERuntime/MCTable.swift",
-        "line_start": 2,
+        "line_start": 1,
         "line_end": 2,
         "symbol": "MC_TABLE"
       }
@@ -106,7 +107,7 @@
       },
       {
         "file_path": "Sources/ShapERuntime/MeshTopology.swift",
-        "line_start": 22,
+        "line_start": 23,
         "line_end": 112,
         "symbol": "MeshTopology"
       }
@@ -133,7 +134,7 @@
       {
         "file_path": "Sources/ShapECLI/ImageParity.swift",
         "line_start": 89,
-        "line_end": 320,
+        "line_end": 319,
         "symbol": "run"
       }
     ],
@@ -160,7 +161,7 @@
     "tests": [
       {
         "file_path": "Tests/ShapERuntimeTests/RuntimeBundleFixture.swift",
-        "line_start": 3,
+        "line_start": 4,
         "line_end": 25,
         "symbol": "RuntimeBundleFixture"
       },
@@ -250,7 +251,7 @@
       "kind": "enum",
       "target": "ShapECLI",
       "file_path": "Sources/ShapECLI/ImageParity.swift",
-      "line_start": 12,
+      "line_start": 6,
       "line_end": 320,
       "symbol": "ImageParityDump",
       "summary": "ShapECLI --image-parity dump. Expects python_*.npy inputs that are not in this repository."
@@ -370,7 +371,7 @@
       "kind": "func",
       "target": "ShapECLI",
       "file_path": "Sources/ShapECLI/main.swift",
-      "line_start": 127,
+      "line_start": 126,
       "line_end": 140,
       "symbol": "sanitizeParamKeyPython",
       "summary": "Swift func sanitizeParamKeyPython."
@@ -520,7 +521,7 @@
       "kind": "enum",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ClipBPELocation.swift",
-      "line_start": 4,
+      "line_start": 3,
       "line_end": 35,
       "symbol": "ClipBPELocation",
       "summary": "Resolves --bpe, then <bundle>/bpe_simple_vocab_16e6.txt.gz."
@@ -530,7 +531,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ClipBPELocation.swift",
-      "line_start": 9,
+      "line_start": 8,
       "line_end": 11,
       "symbol": "fileURL",
       "summary": "Swift func fileURL."
@@ -540,7 +541,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ClipBPELocation.swift",
-      "line_start": 20,
+      "line_start": 13,
       "line_end": 34,
       "symbol": "resolve",
       "summary": "Swift func resolve."
@@ -570,7 +571,7 @@
       "kind": "struct",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/DecoderParamsProjector.swift",
-      "line_start": 53,
+      "line_start": 48,
       "line_end": 354,
       "symbol": "DecoderParamsProjector",
       "summary": "Projects a latent of rank 2, shape [B, D], into NeRF-STF parameter tensors."
@@ -600,7 +601,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/DecoderParamsProjector.swift",
-      "line_start": 175,
+      "line_start": 174,
       "line_end": 249,
       "symbol": "project",
       "summary": "Swift func project.",
@@ -624,7 +625,7 @@
       "kind": "struct",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/DiffusionStep.swift",
-      "line_start": 16,
+      "line_start": 15,
       "line_end": 32,
       "symbol": "DiffusionStepOutput",
       "summary": "Swift struct DiffusionStepOutput."
@@ -734,7 +735,7 @@
       "kind": "class",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/Image300MTransformer.swift",
-      "line_start": 51,
+      "line_start": 49,
       "line_end": 498,
       "symbol": "Image300MTransformer",
       "summary": "Image-conditioned diffusion transformer. Same predict contract family as Text300M, loaded lazily."
@@ -824,7 +825,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ImageProcessor.swift",
-      "line_start": 26,
+      "line_start": 21,
       "line_end": 91,
       "symbol": "processCLIPImage",
       "summary": "Swift func processCLIPImage.",
@@ -868,7 +869,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/KarrasSampler.swift",
-      "line_start": 25,
+      "line_start": 23,
       "line_end": 41,
       "symbol": "build",
       "summary": "Swift func build."
@@ -968,7 +969,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/MarchingCubes.swift",
-      "line_start": 24,
+      "line_start": 18,
       "line_end": 125,
       "symbol": "extract",
       "summary": "Swift func extract.",
@@ -982,7 +983,7 @@
       "kind": "class",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/MarchingCubes.swift",
-      "line_start": 221,
+      "line_start": 220,
       "line_end": 261,
       "symbol": "LookupTable",
       "summary": "Swift class LookupTable."
@@ -1052,7 +1053,7 @@
       "kind": "struct",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/MeshTopology.swift",
-      "line_start": 4,
+      "line_start": 3,
       "line_end": 21,
       "symbol": "MeshTopologyStats",
       "summary": "Swift struct MeshTopologyStats."
@@ -1072,7 +1073,7 @@
       "kind": "struct",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/MeshTopology.swift",
-      "line_start": 25,
+      "line_start": 24,
       "line_end": 37,
       "symbol": "EdgeKey",
       "summary": "Swift struct EdgeKey."
@@ -1082,7 +1083,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/MeshTopology.swift",
-      "line_start": 40,
+      "line_start": 39,
       "line_end": 78,
       "symbol": "stats",
       "summary": "Swift func stats."
@@ -1092,7 +1093,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/MeshTopology.swift",
-      "line_start": 81,
+      "line_start": 80,
       "line_end": 111,
       "symbol": "compare",
       "summary": "Swift func compare."
@@ -1142,7 +1143,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/MetalMarchingCubes.swift",
-      "line_start": 75,
+      "line_start": 74,
       "line_end": 216,
       "symbol": "extract",
       "summary": "Swift func extract."
@@ -1192,7 +1193,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/Models/embeddings/ClipImageEmbedder.swift",
-      "line_start": 100,
+      "line_start": 97,
       "line_end": 185,
       "symbol": "embedImagesGrid",
       "summary": "Swift func embedImagesGrid."
@@ -1386,7 +1387,7 @@
       "kind": "enum",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/RuntimeBundleRequirements.swift",
-      "line_start": 9,
+      "line_start": 3,
       "line_end": 49,
       "symbol": "RuntimeBundleRequirements",
       "summary": "Checks that manifest.json, the CLIP BPE file, and scoped tensor blobs exist. Checksums are enforced by fetch_weights.py."
@@ -1766,7 +1767,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
-      "line_start": 100,
+      "line_start": 99,
       "line_end": 105,
       "symbol": "signedDistance",
       "summary": "Swift func signedDistance."
@@ -1776,7 +1777,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
-      "line_start": 108,
+      "line_start": 107,
       "line_end": 114,
       "symbol": "textureChannels",
       "summary": "Swift func textureChannels."
@@ -1796,7 +1797,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
-      "line_start": 146,
+      "line_start": 144,
       "line_end": 192,
       "symbol": "extractSDFFields",
       "summary": "Swift func extractSDFFields."
@@ -1806,7 +1807,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
-      "line_start": 198,
+      "line_start": 194,
       "line_end": 234,
       "symbol": "meshFromSDFField",
       "summary": "Swift func meshFromSDFField."
@@ -1816,7 +1817,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
-      "line_start": 242,
+      "line_start": 236,
       "line_end": 347,
       "symbol": "extractMeshes",
       "summary": "Swift func extractMeshes."
@@ -1826,7 +1827,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/STFMeshRenderer.swift",
-      "line_start": 461,
+      "line_start": 460,
       "line_end": 483,
       "symbol": "volumeQueryPoints",
       "summary": "Swift func volumeQueryPoints."
@@ -1856,7 +1857,7 @@
       "kind": "struct",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapELogger.swift",
-      "line_start": 9,
+      "line_start": 8,
       "line_end": 20,
       "symbol": "ShapELogger",
       "summary": "Swift struct ShapELogger."
@@ -1866,7 +1867,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapELogger.swift",
-      "line_start": 14,
+      "line_start": 13,
       "line_end": 19,
       "symbol": "debug",
       "summary": "Swift func debug."
@@ -1886,7 +1887,7 @@
       "kind": "struct",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 9,
+      "line_start": 7,
       "line_end": 63,
       "symbol": "ShapEMeshResult",
       "summary": "Public mesh result. verticesArray is [Float] length V*3. facesArray is [Int32] length F*3."
@@ -1896,7 +1897,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 14,
+      "line_start": 13,
       "line_end": 16,
       "symbol": "mlxVertices",
       "summary": "Swift func mlxVertices."
@@ -1906,7 +1907,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 19,
+      "line_start": 18,
       "line_end": 21,
       "symbol": "mlxFaces",
       "summary": "Swift func mlxFaces."
@@ -1916,7 +1917,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 24,
+      "line_start": 23,
       "line_end": 26,
       "symbol": "mlxTextureChannel",
       "summary": "Swift func mlxTextureChannel."
@@ -1926,7 +1927,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 34,
+      "line_start": 28,
       "line_end": 36,
       "symbol": "verticesArray",
       "summary": "Swift func verticesArray."
@@ -1936,8 +1937,8 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 40,
-      "line_end": 55,
+      "line_start": 38,
+      "line_end": 56,
       "symbol": "facesArray",
       "summary": "Swift func facesArray."
     },
@@ -1946,7 +1947,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/ShapERuntime.swift",
-      "line_start": 59,
+      "line_start": 58,
       "line_end": 62,
       "symbol": "colorsArray",
       "summary": "Swift func colorsArray."
@@ -2172,7 +2173,7 @@
       "kind": "enum",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
-      "line_start": 63,
+      "line_start": 62,
       "line_end": 89,
       "symbol": "TimestepEmbedding",
       "summary": "Swift enum TimestepEmbedding."
@@ -2182,7 +2183,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
-      "line_start": 69,
+      "line_start": 64,
       "line_end": 88,
       "symbol": "compute",
       "summary": "Swift func compute."
@@ -2232,7 +2233,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
-      "line_start": 363,
+      "line_start": 356,
       "line_end": 424,
       "symbol": "predict",
       "summary": "Swift func predict.",
@@ -2246,7 +2247,7 @@
       "kind": "func",
       "target": "ShapERuntime",
       "file_path": "Sources/ShapERuntime/Text300MTransformer.swift",
-      "line_start": 427,
+      "line_start": 426,
       "line_end": 456,
       "symbol": "predictInternal",
       "summary": "Swift func predictInternal."
@@ -2387,7 +2388,7 @@
       "target": "ShapERuntimeTests",
       "file_path": "Tests/ShapERuntimeTests/RuntimeArtifactBundleTests.swift",
       "line_start": 4,
-      "line_end": 104,
+      "line_end": 137,
       "symbol": "RuntimeArtifactBundleTests",
       "summary": "Swift class RuntimeArtifactBundleTests."
     },
@@ -2563,5 +2564,113 @@
       "to": "Sources/ShapERuntime/ClipBPELocation.swift::ClipBPELocation@4",
       "kind": "tested_by"
     }
-  ]
+  ],
+  "content_hashes": {
+    "Package.swift:12-19": "ea2c0452c968e9827c9eccdbdf2c69b226feff045d8b4bf4420e607bd087ab27",
+    "Package.swift:6-9": "9d2cfbd202c069383b9f50582b212067957d70086fa4dac8afc918559af28ecf",
+    ".github/workflows/ci.yml:16-48": "6a80f0444d673bccd05aab40775f491b1ba030df4ac5795046d8579f9c4d1961",
+    "ShapERuntime.swift:122": "f31859d830b044b54443b39ac9b47cdfaa76ac6666b8309037507a1c184cbb62",
+    "ShapERuntime.swift:247": "0f8e71085153b1cd3cc157d28a04524ccf55da235f8f4f42c2feef467c86193a",
+    "ShapERuntime.swift:266-279": "dde03510b0afa27665d4c81dfa0785750727826e0c57f1ead2786f70f04b9e2c",
+    "ShapERuntime.swift:419-432": "00b685dd6a97b5aac72dd5bd9d9ec72d71f5a143fe9a56abccf9e29ec83871da",
+    "ShapERuntime.swift:454-466": "0b0235dba17346282de5b158881865a86d949286ac39e8887e40e4e5166ee87a",
+    "ImageProcessor.swift:21-26": "e6821056c4d8acab9fd32c81d7dc0d348a00d84c016ef4d0a54193ecb8eda4ca",
+    "ClipTextEmbedder.swift:247-249": "37ac5c98bf642b4d80b7fc9163ac5a417b37850d9c90e6864afc0d5e745d571e",
+    "ClipTextEmbedder.swift:107": "75acb8ab757d8e557ddec950936c880bb18f0f99fef6618fa5415b7f640be477",
+    "Text300MTransformer.swift:356-362": "ff202a3202cffc9d03900e6ec393da431c30f6be154a287014a5fdf4db69f388",
+    "DecoderParamsProjector.swift:174-175": "9674f17f818606f2f20f9374d512c3b50c2a7fc366e8cbeee29e3069e0472f39",
+    "MarchingCubes.swift:18-23": "2f3f2079a67395fb4a6ffec66b758cf13e34d3a06de314ae1e0a9da723b5b9af",
+    "RuntimeArtifactBundle.swift:140-141": "2627b08b799b3615211388c94cfd41ad38b612c13a0cc5cb3fb0fb7f9d3f2d8c",
+    "Tests/ShapERuntimeTests/Fixtures/README.md:28-35": "91d82f35b562d3c2c30f9ceab51ee27f1a2767080f273e52f0e168afe7fe6451",
+    "Text300MTransformer.swift:180-185": "3ec61c777eb6cb8f023b5979b03ebcdb6653aa7adbf4829c6b4b60b0de8c11fa",
+    "run_tests.sh:1-7": "2b26e0f48aeeddd5a16374999720e0eee70828fd72c89f521314f855f2223078",
+    "Package.swift:31": "e196d437323103b6748fef45fb860bf1029b6d130786273f0f472e01f2f94482",
+    "run_tests.sh:17-20": "ed50f992b199c843785b01ea01a972dce81f8e09933380d1a578de3de9f4606c",
+    ".github/workflows/ci.yml:46": "ffffd747d58797132653e8f50d282865d51519fac3ef52621ff1d7b8df4d5471",
+    "run_tests.sh:18-19": "662183943d33221469e9a8942e6c9e9c5cc9df4c41d1f62897a770e22111f718",
+    ".github/workflows/ci.yml:42-52": "69eb1ce10f50d526ce79545993a31584c327faf2ed4223742260524b9067afba",
+    "ClipSimpleTokenizerTests.swift:11-18": "c666f0798788531a2de5bcde529b5f69b23c64cd7b2f0644c5c7d018e01e8db5",
+    "Package.swift:1": "f387f421736bbc53d3eaae16c99cf3e11cf6c46bdfb2a1790d6ddea81cdd5577",
+    "Package.swift:22": "d0c87e7b3736b10377195b73f63c1fe55510b5bdf62605e74bd1543bf6d19d84",
+    "Package.resolved:4-11": "f7c8b9716505e7d2a7f4ce3f368c9ba018c47b9524d05b980cb8a0fa366f4c9e",
+    "README.md:98": "7fd20945a93f979778e1be37892a409d5582e17dacfd8e737f1aa97366ab9101",
+    "ImageProcessor.swift:61-63": "99b5f6e83ed64affcb53bf2920dde465178eacfefd92487ac3b918b17eff6a00",
+    "ClipTextEmbedder.swift:237-249": "95dada466b2bf74749a54bac03eadb71cc78c30684d92678f810b8e801adc0d8",
+    "ImageParity.swift:193-194": "27f3eec57c579195d0a0200b84d1108ccae10f27c8d66eca3e451c22cba44a7e",
+    "DecoderParamsProjector.swift:174-185": "a71359f56687ed8a47fc02e6b04025b7bdb0cc52e64a2c634c831a8405d4ffb4",
+    "DecoderParamsProjector.swift:195-201": "4eb812c325c45c39fb969c1a5a238707b6eb3799223ce38ed43c8d3756f9572e",
+    "RuntimeCoreTypes.swift:56-58": "7a5f52f0c471a47b0bcb60c50274e3ef29d78ee33f3dca873df8059b6a73c83f",
+    "MeshExport.swift:26-27": "1ab66baf018fb317916c0eba5984addf235b4000ccb0edb878ad9890f552116c",
+    "scripts/fetch_weights.py:31-32": "bb81d59893ec65807da600f6901e93048a8d4387d7a72b2e37a295140bbc9893",
+    "README.md:96": "ca84e698522aafe2d221b4b1666add337c3c0733925ad11b3af66fcdec9d4681",
+    "README.md:30": "3b52d069c294294f8be68193e40d265d42ddb2ac0d48d799723c4decc423a042",
+    "fetch_weights.py:64-76": "100c6645ee724f5f5bbaa9daa1db3efe27ded01f5074fff28d020d339e0a4b6c",
+    "fetch_weights.py:180-218": "4fde83a021981a2372c2f4c30b4e4ef5b47e11ed7cd4c66db9fb224004426a4e",
+    "fetch_weights.py:202": "9c4f1939a7aa73e8ec1624b0581ab1a9bcff56ff0b343d454f79bbc6fce15ce4",
+    "fetch_weights.py:34-61": "d776739d763c8fc908dc977655e8d3d97f3597f482bc39645f4797fd2a3fcbec",
+    "fetch_weights.py:140-177": "579b40b4b1030b5d90571db2f322959cbd79a01f8c5a19c2f276df677d944b86",
+    "scripts/test_fetch_weights.py:48": "bbe169bbb483e7d110255c2263c5d7d9632fb13c902675161e2b8d036ae216ce",
+    "scripts/test_fetch_weights.py:106": "6222db31985f0343599ff0d135ba61241c66f875563fe943cdd2088af6c53a9c",
+    "RuntimeArtifactBundle.swift:49-116": "1182186b5819281b801d943ec5f8236a824f69c1a88805160981ab589e747a1a",
+    "ImageParity.swift:89": "430f90aee08e5c311e230d69aa91bf99128a7c6bba160d5ee887584ead55fbb1",
+    "README.md:115": "d8ed615aabbe86cfc6a18e44b7166264a141fb9489268f11e6c04c31df839178",
+    "README.md:109": "5042556181c2fc051e353827db5df12d10eaee5723243659b73df3b857f53d1d",
+    "main.swift:266": "73361cb41afaf55187cbb0eabcdfc60d2c8fb3df6efeac68d0f57280d60382bf",
+    "main.swift:441": "64d977b8f806ff5b8aab61534c4ef3dbcebf1075924b99dd1903277986c86d2c",
+    "ImageParity.swift:97": "d2e55f0c0fb484e27343dcc979fad4eebcd7f0047dd02818a8de996352985e27",
+    "ShapERuntime.swift:274": "4137198d625f4f23fd4fb02e44345da35c06a53882b0f0e97029151b62f7c542",
+    "STFMeshRenderer.swift:244": "4137198d625f4f23fd4fb02e44345da35c06a53882b0f0e97029151b62f7c542",
+    "MetalMarchingCubes.swift:49-51": "b653fc2a25bd182889115a1fca5756118c23a258012901f55e9bd157ac423f09",
+    "MetalMarchingCubes.swift:46": "4920defeacb16ba37cefd71d97af9e8a504d875bd2ba2658f1b292e7e18baf3e",
+    "MarchingCubes.swift:243": "9b30f79dd2416bfa3306eeb1bb42a7ce9090d8241fce8719c4f60aeccdd7ac6b",
+    "MetalMarchingCubes.swift:58": "f8799ff35b7476cdcaff02f048833b8b139a20e07dd7b8fdf37e0fb561ab5602",
+    "run_tests.sh:3-7": "b69664e7dd8bfcb440ea6f092cd3179ccdf0740a7ec5bc703c28d34e672ee944",
+    "Sources/ShapERuntime/Models/embeddings/ClipSimpleTokenizer.swift:29": "a0a487fa29d189cd3a486fc5d1735b4df5bd035a7fa33510c32250265dfcb45a",
+    "Sources/ShapERuntime/KarrasSampler.swift:316": "7d34ca755b9b8ede24a99fc4d6cbd3d7aaaf40673a7046c0b21bdcc0b45f7e1e",
+    "Sources/ShapERuntime/MeshTopology.swift:22-112": "3fe0f7a41b60200d60eae39c861ba06613b3cec83aff008ec77b72990bdd0e45",
+    "scripts/fetch_weights.py:34-61": "d776739d763c8fc908dc977655e8d3d97f3597f482bc39645f4797fd2a3fcbec",
+    "scripts/fetch_weights.py:180-218": "4fde83a021981a2372c2f4c30b4e4ef5b47e11ed7cd4c66db9fb224004426a4e",
+    "Tests/ShapERuntimeTests/RuntimeBundleFixture.swift:3-25": "27aefb132473e7a960c53631674373048bd26651fa6a6fddf807cf191e6d796d",
+    "Package.swift:1-22": "b41a90644030e37b5aa6a2b610f2c885d634b57f497e918b9f5c450ebf68c05f",
+    ".github/workflows/ci.yml:36-48": "c865f7d9be96a8ec15a5b7db6c18c29bd438d9494fea7535c99d15b178e2ad08",
+    "Package.swift:12-15": "bfd9ba457b5b48fe41fe95739ba3f3bf45a451e2efb0f1dd91f8ae206b2a8262",
+    "ShapERuntime.swift:160": "178974aaccc2ac391d0698c621813bd0b3b3da1af4f3f00d5bdd4df7a70204b7",
+    "ClipSimpleTokenizer.swift:29": "a0a487fa29d189cd3a486fc5d1735b4df5bd035a7fa33510c32250265dfcb45a",
+    "ClipSimpleTokenizer.swift:76": "37ced9d45a098898212fe9c2a7e3c4762767ee452909ed941e2c65835be3a440",
+    "ClipSimpleTokenizer.swift:99": "985abdf9c973ac8923f469918846a54a408a47cb3ce1bc604f34113c1acca72b",
+    "KarrasSampler.swift:316": "7d34ca755b9b8ede24a99fc4d6cbd3d7aaaf40673a7046c0b21bdcc0b45f7e1e",
+    "KarrasSampler.swift:72": "1cfc64eca4114e6529d74e39e6e355d4cb0d20661b0b6aed94ba3355a047db0c",
+    "ShapERuntime.swift:297": "58e3f8071889ed998706b5a7194fb4f1c139a8631e7042dff22c69cb96cebb58",
+    "STFMeshRenderer.swift:242-270": "eea6983cb004de29b21885a7bafd0645d78a9536abbaa22c0976d7ece1f16839",
+    "ShapERuntime.swift:227-248": "12ccf5da2f4fe66c22c68aabd2730c76b79a7a8b5ef6af867073617fd82fa80d",
+    "ShapERuntime.swift:433": "bcaacb2e0807ec075facda8e4623f1878d52edb2bea0163fe444592ef3c2d26a",
+    "ShapERuntime.swift:454-455": "2a83a7d112bcd43f0711b47d31eb752fa787ac94f9cff38c8b189601e6818c77",
+    "Tests/ShapERuntimeTests/Fixtures/README.md:20-22": "0bd8945b7372c109346540aa9d89f7abac0d9742d6034a47340c05c77b13bf48",
+    "MarchingCubes.swift:221-243": "4b183f7ff37f211f1f57097e2a274ed816a1875768bf2c253eac16f5132ddda3",
+    "MetalMarchingCubes.swift:46-51": "026ca63c1bc3a5230ff9b7f9a612cf5d1ae08595345d91a602240f90c2ba4fd5",
+    "MetalMarchingCubes.swift:58-59": "78f0cad22ca5fec5cd2e3dfcccccf2edff0e438b5a98d2b97e1aa2b396a7fd35",
+    "MarchingCubes.metal:65-66": "38ed5bd6ecd49f9b99caed3e3c7117b22d7f2b3f7c56d4064229c23407667c78",
+    "MeshTopology.swift:22-112": "3fe0f7a41b60200d60eae39c861ba06613b3cec83aff008ec77b72990bdd0e45",
+    "Tests/ShapERuntimeTests/Fixtures/README.md:30": "c4d71e55d459e0c53c0672447da92693b595f6c08ef333188e2e8c6a7aa76327",
+    "RuntimeArtifactBundle.swift:62-63": "814161d91ad2179108fc6f5eac9fcd144abdc72525e07f0174cd265fb8c313cc",
+    "fetch_weights.py:160-177": "53fde40881067dbccae873d7f7b0cff7539dc71154b0d6d0aec131edff5f00c7",
+    "fetch_weights.py:140-157": "c14e43c01f040b504ff825bdd0566721e8a1d23715bd4514e21fa55e86b13142",
+    "fetch_weights.py:41-44": "fbae92a150249c1cc4369c44eb43b24c5111f8364998ca0e38fcef4795f2edd9",
+    "ClipSimpleTokenizerTests.swift:11-29": "19d121dc56aa3f7209e7c27ba45d9a5488dc5887e3d02f7e8c0fa2c52cfc3943",
+    "Package.swift:25-31": "345f37981bf4a5cd79cda981076e1176f41d3077ec2c36c4ca900888873b3a58",
+    ".github/workflows/ci.yml:16-21": "504e5b9ab59282fa79ddf9e25596b0db53da8411f3a56d219d725f5044a7fdc1",
+    ".github/workflows/ci.yml:37-40": "afeb62991e9bd52a700035fedbf6ba7ee88fe3fea43ed91be7e2b8585e1a9ed9",
+    "RuntimeBundleFixture.swift:3-11": "f1d8026dd6a23d29489601dd153aa1fd2db8dccd4707f3484cf1f13d86d51786",
+    "README.md:28-45": "ce28b5b14746e41b00bcb87c93025c76387ad3c1ca57eaa22a4914be449519d7",
+    "ClipSimpleTokenizerTests.swift:11-36": "62556c99ebdf8d3911d4dd098c746763ba393369534871dfaf6657da1dd9bc0a",
+    "README.md:94": "674707788fb81b893b48359f7eef164e3a63534363be67756a2e37cd8062a52b",
+    "Sources/ShapECLI/main.swift:266": "73361cb41afaf55187cbb0eabcdfc60d2c8fb3df6efeac68d0f57280d60382bf",
+    "Sources/ShapECLI/main.swift:441": "64d977b8f806ff5b8aab61534c4ef3dbcebf1075924b99dd1903277986c86d2c",
+    "Sources/ShapECLI/ImageParity.swift:97": "d2e55f0c0fb484e27343dcc979fad4eebcd7f0047dd02818a8de996352985e27",
+    "ShapERuntime.swift:273-274": "d38e48965d52522a2487db8a25f6d4c7b53be4180fe2c1400f7d3a176a5dac3e",
+    "STFMeshRenderer.swift:244-253": "3d3f6308ee24f48d37c2eebde91f90e29fcb6c7f4d315b4ef11de3b6c1084fb1",
+    "ShapERuntime.swift:276": "5d05d68294aee67abd96a983909597d213ea55275661c2f4be2e1426ee14a499",
+    "ShapERuntime.swift:322": "39a1cbe38467e8f3b82a7787d074f85c25c42b75f2ff47378dbd7153875a2a4e",
+    "README.md:90-111": "49d5f91619e624c03d95c1fff6aa4da51586137287f6a015496412ee4de78e33"
+  }
 }

@@ -42,14 +42,14 @@ Checksum lines are 64 hex characters, two spaces, then a relative path (`fetch_w
 
 BPE search order when `--bpe` is omitted or that path is missing:
 
-1. `ClipBPELocation.resolve` uses an existing `--bpe` path, else `<bundle>/bpe_simple_vocab_16e6.txt.gz` (`ClipBPELocation.swift:20-34`).
-2. `resolveBPE` then checks `.mlx_venv` CLIP paths and `./bpe_simple_vocab_16e6.txt.gz` (`main.swift:212-233`).
+1. `ClipBPELocation.resolve` uses an existing `--bpe` path, else `<bundle>/bpe_simple_vocab_16e6.txt.gz` (`ClipBPELocation.swift#ClipBPELocation.resolve`).
+2. `resolveBPE` then checks `.mlx_venv` CLIP paths and `./bpe_simple_vocab_16e6.txt.gz` (`main.swift#resolveBPE`).
 
-Bundle discovery looks for `manifest.json` (`main.swift:193-210`).
+Bundle discovery looks for `manifest.json` (`main.swift#resolveBundle`).
 
 ## Parity
 
-`ShapECLI --parity` and `--image-parity` write `.npy` dumps (`main.swift:255-402`, `ImageParity.swift:89`). `README.md:115` says those modes expect reference files such as `case.json` and `python_*.npy`, and those files are not in this repository. Do not claim a numeric correlation from a run that is not recorded here.
+`ShapECLI --parity` and `--image-parity` write `.npy` dumps (`main.swift#runParityDump`, `ImageParity.swift:89`). `README.md:115` says those modes expect reference files such as `case.json` and `python_*.npy`, and those files are not in this repository. Do not claim a numeric correlation from a run that is not recorded here.
 
 The M3 Max mesh counts in `README.md:109` are a recorded local A/B, not a unit-test assertion.
 
@@ -61,4 +61,4 @@ Volume queries default to `queryBatchSize` 65536 (`ShapERuntime.swift:274`, `STF
 
 Metal kernels are `countTriangles` and `extractMesh` (`MetalMarchingCubes.swift:49-51`). The library is `Bundle.module` (`MetalMarchingCubes.swift:46`). Both backends read `LookupTable.shared`, which is built from `MC_TABLE` (`MarchingCubes.swift:243`, `MetalMarchingCubes.swift:58`).
 
-Tests that touch MLX pin the default stream to CPU in `setUp` (for example `Text300MTransformerTests.swift:10-14`). That does not remove the need for `default.metallib` at process start (`run_tests.sh:3-7`).
+Tests that touch MLX pin the default stream to CPU in `setUp` (for example `Text300MTransformerTests.swift#Text300MTransformerTests.setUp`). That does not remove the need for `default.metallib` at process start (`run_tests.sh:3-7`).

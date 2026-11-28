@@ -14,12 +14,12 @@ Platforms in `Package.swift:6-9`: macOS 14, iOS 17, visionOS 1. CI builds and te
 Public entry points, `Sources/ShapERuntime/ShapERuntime.swift`:
 
 - `init(modelBundleURL:bpeVocabularyURL:)` at `ShapERuntime.swift:122`.
-- `generate(prompt:guidanceScale:numInferenceSteps:sigmaMin:sigmaMax:gridSize:queryBatchSize:seed:)` at `ShapERuntime.swift:227-255` returns one `ShapEMeshResult`. Defaults include `guidanceScale` 15, `numInferenceSteps` 64, `gridSize` 128, `queryBatchSize` 65536, `seed` 0. This overload forces CPU marching cubes (`useMetalMarchingCubes: false` at `ShapERuntime.swift:247`).
+- `generate(prompt:guidanceScale:numInferenceSteps:sigmaMin:sigmaMax:gridSize:queryBatchSize:seed:)` at `ShapERuntime.swift#ShapERuntime.generate` returns one `ShapEMeshResult`. Defaults include `guidanceScale` 15, `numInferenceSteps` 64, `gridSize` 128, `queryBatchSize` 65536, `seed` 0. This overload forces CPU marching cubes (`useMetalMarchingCubes: false` at `ShapERuntime.swift:247`).
 - `generate(prompt:batchSize:...)` at `ShapERuntime.swift:266-279` returns `[ShapEMeshResult]`.
 - `generate(image: CGImage, ...)` at `ShapERuntime.swift:419-432` returns `[ShapEMeshResult]`. Image guidance default is 3.
 - `generate(image: MLXArray, ...)` at `ShapERuntime.swift:454-466`. The comment on that line says the array is expected `[1, 224, 224, 3]` normalized.
 
-`ShapEMeshResult.verticesArray()` is `[Float]` of length `V * 3`. `facesArray()` is `[Int32]` of length `F * 3` (`ShapERuntime.swift:34-36`, `ShapERuntime.swift:40-55`). The accessors read tensor bytes directly instead of `MLXArray.asArray`.
+`ShapEMeshResult.verticesArray()` is `[Float]` of length `V * 3`. `facesArray()` is `[Int32]` of length `F * 3` (`ShapERuntime.swift#ShapEMeshResult.verticesArray`, `ShapERuntime.swift#ShapEMeshResult.facesArray`). The accessors read tensor bytes directly instead of `MLXArray.asArray`.
 
 Tensor shapes that the code states:
 
@@ -93,4 +93,4 @@ xcodebuild test \
 
 ## Zero-drift rule
 
-A commit that adds, moves, renames, or changes files, public APIs, MLX layers, or `Package.swift` constraints must update `docs/knowledge-graph.json`, `docs/knowledge-graph.md`, and the affected `docs/wiki/*.md` in the same commit. `metadata.verified_commit` stays the commit whose source lines were measured. Explain that in `verified_commit_note` if the docs commit is a different SHA. Run `python3 scripts/verify_docs.py` before pushing.
+A commit that adds, moves, renames, or changes files, public APIs, MLX layers, or `Package.swift` constraints must update `docs/knowledge-graph.json`, `docs/knowledge-graph.md`, and the affected `docs/wiki/*.md` in the same commit. `metadata.verified_commit` stays the commit whose source lines were measured. Explain that in `verified_commit_note` if the docs commit is a different SHA. Run `python3 scripts/verify_docs.py` before pushing and before tagging. If line-range citations fail because code moved, `python3 scripts/verify_docs.py --fix` retargets them when the hashed text still exists uniquely in the same file. See CONTRIBUTING.md.

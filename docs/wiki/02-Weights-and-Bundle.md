@@ -10,9 +10,9 @@ Trained weights are not in git. `runtime_bundle/` is gitignored. The only commit
 
 ## Manifest and blobs
 
-`RuntimeArtifactBundle` reads `manifest.json` from the bundle directory (`RuntimeArtifactBundle.swift:49-116`). Init throws `manifestNotFound` when that file is absent (`RuntimeArtifactBundle.swift:62-63`). `loadText300MArtifact` reads metadata keys `n_ctx` and `d_latent` (`RuntimeArtifactBundle.swift:140-141`). `loadClipTextArtifact` reads `context_length`, `transformer_width`, `transformer_heads`, and `transformer_layers` (`RuntimeArtifactBundle.swift:118-133`). `RuntimeBundleRequirements.validate` (`RuntimeBundleRequirements.swift:41-46`) throws `missingRequiredFile` when the manifest, the BPE file, or a scoped tensor path is missing. It does not read `checksums.sha256`.
+`RuntimeArtifactBundle` reads `manifest.json` from the bundle directory (`RuntimeArtifactBundle.swift:49-116`). Init throws `manifestNotFound` when that file is absent (`RuntimeArtifactBundle.swift:62-63`). `loadText300MArtifact` reads metadata keys `n_ctx` and `d_latent` (`RuntimeArtifactBundle.swift:140-141`). `loadClipTextArtifact` reads `context_length`, `transformer_width`, `transformer_heads`, and `transformer_layers` (`RuntimeArtifactBundle.swift#RuntimeArtifactBundle.loadClipTextArtifact`). `RuntimeBundleRequirements.validate` (`RuntimeBundleRequirements.swift#RuntimeBundleRequirements.validate`) throws `missingRequiredFile` when the manifest, the BPE file, or a scoped tensor path is missing. It does not read `checksums.sha256`.
 
-`TensorBlobLoader` loads the raw file named by each manifest entry (`TensorBlobLoader.swift:130-156`). These are not safetensors. A full per-file size table is not checked into this repo. Integrity for a download is `checksums.sha256`.
+`TensorBlobLoader` loads the raw file named by each manifest entry (`TensorBlobLoader.swift#TensorBlobLoader`). These are not safetensors. A full per-file size table is not checked into this repo. Integrity for a download is `checksums.sha256`.
 
 ## fetch_weights.py
 
@@ -30,12 +30,12 @@ Text scope (`fetch_weights.py:34-61`):
 
 ## BPE fallback
 
-`ClipBPELocation.resolve` (`ClipBPELocation.swift:20-34`):
+`ClipBPELocation.resolve` (`ClipBPELocation.swift#ClipBPELocation.resolve`):
 
 - Non-empty `--bpe` wins when that file exists.
 - Otherwise `<bundle>/bpe_simple_vocab_16e6.txt.gz` when it exists.
 
-`ShapECLI.resolveBPE` calls that first, then `.mlx_venv` site-packages paths and `./bpe_simple_vocab_16e6.txt.gz` (`main.swift:212-233`).
+`ShapECLI.resolveBPE` calls that first, then `.mlx_venv` site-packages paths and `./bpe_simple_vocab_16e6.txt.gz` (`main.swift#resolveBPE`).
 
 `ShapERuntime.init` does not search. The caller passes `bpeVocabularyURL` (`ShapERuntime.swift:122`).
 
